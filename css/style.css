@@ -1,6 +1,7 @@
 *{
 	margin: 0;
 	padding: 0;
+	font-family: 'Poppins', sans-serif;
 }
 .header{
 	width: 100%; /*for the image to occupy 100% of the width of the page*/
@@ -9,4 +10,63 @@
 	background-position: center;/*to center the image*/
 	background-size: cover;/*Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges*/
 	position: relative;	/*The element is positioned relative to its normal position, so "left:20px" adds 20 pixels to the element's LEFT position*/
+}
+nav{
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	padding: 2% 6%; /*Espaço interno da nav pai*/
+}
+nav img{
+	width: 150px;
+}
+.nav-links{
+	flex: 1;
+	/*Flex: 1 Means
+flex-grow : 1;    ➜ The div will grow in same proportion as the window-size       
+flex-shrink : 1;  ➜ The div will shrink in same proportion as the window-size 
+flex-basis : 0;   ➜ The div does not have a starting value as such and will take up screen as per the screen size available for e.g:- if 3 divs are in the wrapper then each div will take 33%.
+	*/
+	text-align: right;
+}
+.nav-links ul li{
+	list-style: none; /*Tira as bolinhas da lista*/
+	display: inline-block; /*Sair da lista da ul e ficar lado a lado*/	
+	padding: 8px 12px; /*Espaço entre os links*/
+	position: relative;
+}
+.nav-links ul li a{
+	color: #fff;
+	text-decoration: none; /*Tirar underline do link*/
+	font-size: 13px;
+}
+.nav-links ul li::after{ /*Será criado apois o conteudo.. Serve para deixar a marcação mais limpa... pois sem ele seria necessario criar uma div e estilizar ela*/
+	content: ''; /*Cria o Pseudo Element seja criado*/
+	width: 0%;
+	height: 2px;
+	background: #f44336;
+	display: block;
+	margin: auto;
+	/*
+Ordem dos valores da margem
+	margin: top right bottom left 
+margin: 0; margem de todos os lados = 0 
+margin: 0 1px; top/bottom = 0; right/left = 1px 
+margin: 0 1px 2px; top = 0; right/left = 1px; bottom = 2px 
+margin: 0 1px 2px 3px; top = 0; right= 1px; bottom = 2px; left = 3px 
+margin: auto;
+Significa que o browser dará uma margem automática para todos os lados. A margem automática não irá funcionar em todas as ocasiões pois ela precisa de uma lógica para funcionar.*/
+	transition: 0.5s;
+	/*Gera efeitos de tempo de execução
+Segue a ordem (Apos os dois pontos são exemplos)
+transition-property: all; 
+transition-duration: 2s;
+transition-timing-function: ease-out;
+transition-delay: 0s;
+é igual a 
+transition: all 2s ease-out 0;
+	*/
+}
+.nav-links ul li:hover::after{
+	width: 100%;
 }
