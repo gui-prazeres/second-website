@@ -7,13 +7,16 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@100;200;300;400;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@100;200;300;400;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">	
+	<link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <section class="header">
 	<nav>
 		<a href="index.html"><img src="img/logo.png" alt=""></a>
-		<div class="nav-links">
+		<div class="nav-links" id="navLinks">
+			<i class="fa fa-times" onclick="hideMenu()"></i>
+			<!-- X aparece la em cima quando right recebe 0 quando o icone sanduiche é clicado-->
 			<ul>
 				<li><a href="">HOME</a></li>
 				<li><a href="">ABOUT</a></li>
@@ -22,6 +25,7 @@
 				<li><a href="">CONTACT</a></li>
 			</ul>
 		</div>
+		<i class="fa fa-bars" onclick="showMenu()"></i> <!-- Ele aparece antes de todo mundo pq o display ta right -200 inicial-->
 	</nav>
 	<div class="text-box">
 		<h1>World's Biggest Univesity</h1>
@@ -29,5 +33,18 @@
 		<a href="" class="hero-btn">Visit Us To Know More</a>
 	</div>
 </section>
+
+<!-- JavaScript for Toggle Menu -->
+<script>
+	var navLinks = document.getElementById("navLinks");
+	function showMenu(){
+		navLinks.style.right = "0";		
+	}
+	function hideMenu(){
+		navLinks.style.right = "-200px";
+	}
+</script>
+
+
 </body>
 </html>
