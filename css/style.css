@@ -9,7 +9,21 @@
 	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../img/banner.png);/*to work the photo with css with gradient*/
 	background-position: center;/*to center the image*/
 	background-size: cover;/*Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges*/
-	position: relative;	/*The element is positioned relative to its normal position, so "left:20px" adds 20 pixels to the element's LEFT position*/
+	position: relative;	/*The element is positioned relative to its normal position, so "left:20px" adds 20 pixels to the element's LEFT position
+
+	Resumo
+	Position Static ja vem por padrão então seguem o fluxo da pagina normalmente. Por isso as propriedades top bottom left right não funcionarão
+	Position fixed faz o elemento ficar fixo na pagina.. posicionado em relação a viewport (tamanho total do documento) e permanece mesmo rolando o scrol.
+	Position sticky ele cola na posição definida pelas propriedades do position.. caso o scrol leve ele ate la..
+	Position Relative apenas segue a propriedade mandada e permanecera nela.
+	Position Absolute é posicionado em relação ao elemento de maior hierarquia que possui um position relative ou ao body da pagina caso este elemento nao exista.
+
+
+Resumo Flex
+
+Resumo Display
+
+	*/
 }
 nav{
 	display: flex;
@@ -67,6 +81,41 @@ transition-delay: 0s;
 transition: all 2s ease-out 0;
 	*/
 }
-.nav-links ul li:hover::after{
+.nav-links ul li:hover::after{/*Acredito que sem este after, o hover aplicaria o efeito dele sem que o after do codigo acima fosse aplicado...*/
 	width: 100%;
+}
+.text-box{
+	width: 90%; /*Largura da Div em relação a tela*/
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	text-align: center; /*Div ocupara o centro da tela*/
+	transform: translate(-50%,-50%);/*Acredito que seja um macete de centralização usando position absolute com transform translate.. pq sem o transform os valores seriam top 32% left 5%*/
+	
+}
+.text-box h1{
+	font-size: 62px;
+}
+.text-box p{
+	margin: 10px 0 40px;/*afastar um pouco do h1 e mais do botao*/
+	font-size: 14px;
+	color: #fff;
+}
+.hero-btn{
+	display: inline-block;/*não mudou nada..*/
+	background: transparent;/*não mudou nada..*/
+	position: relative;/*não mudou nada..*/
+	text-decoration: none;
+	color: #fff;
+	border: 1px solid #fff;
+	padding: 12px 34px;
+	font-size: 13px;
+
+	cursor: pointer;
+}
+.hero-btn:hover{
+	background: #f44336;
+	border: 1px solid #f44336;
+	transition: 1s;
 }
