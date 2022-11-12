@@ -11,18 +11,6 @@
 	background-size: cover;/*Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges*/
 	position: relative;	/*The element is positioned relative to its normal position, so "left:20px" adds 20 pixels to the element's LEFT position
 
-	Resumo
-	Position Static ja vem por padrão então seguem o fluxo da pagina normalmente. Por isso as propriedades top bottom left right não funcionarão
-	Position fixed faz o elemento ficar fixo na pagina.. posicionado em relação a viewport (tamanho total do documento) e permanece mesmo rolando o scrol.
-	Position sticky ele cola na posição definida pelas propriedades do position.. caso o scrol leve ele ate la..
-	Position Relative apenas segue a propriedade mandada e permanecera nela.
-	Position Absolute é posicionado em relação ao elemento de maior hierarquia que possui um position relative ou ao body da pagina caso este elemento nao exista.
-
-
-Resumo Flex
-
-Resumo Display
-
 	*/
 }
 nav{
@@ -36,11 +24,6 @@ nav img{
 }
 .nav-links{
 	flex: 1;
-	/*Flex: 1 Means
-flex-grow : 1;    ➜ The div will grow in same proportion as the window-size       
-flex-shrink : 1;  ➜ The div will shrink in same proportion as the window-size 
-flex-basis : 0;   ➜ The div does not have a starting value as such and will take up screen as per the screen size available for e.g:- if 3 divs are in the wrapper then each div will take 33%.
-	*/
 	text-align: right;
 }
 .nav-links ul li{
@@ -61,15 +44,6 @@ flex-basis : 0;   ➜ The div does not have a starting value as such and will ta
 	background: #f44336;
 	display: block;
 	margin: auto;
-	/*
-Ordem dos valores da margem
-	margin: top right bottom left 
-margin: 0; margem de todos os lados = 0 
-margin: 0 1px; top/bottom = 0; right/left = 1px 
-margin: 0 1px 2px; top = 0; right/left = 1px; bottom = 2px 
-margin: 0 1px 2px 3px; top = 0; right= 1px; bottom = 2px; left = 3px 
-margin: auto;
-Significa que o browser dará uma margem automática para todos os lados. A margem automática não irá funcionar em todas as ocasiões pois ela precisa de uma lógica para funcionar.*/
 	transition: 0.5s;
 	/*Gera efeitos de tempo de execução
 Segue a ordem (Apos os dois pontos são exemplos)
@@ -140,8 +114,7 @@ nav .fa{
 		right: -200px;
 		text-align: left;		
 		transition: 1s;
-		z-index: 2;/*Neste caso, sem o z index maior, o menu ficaria atras do conteudo escrito no meio da pagina, uma vez que foi escrito primeiro. O ultimo elemento sempre fica em cima por default 
-		Aponta profundidade. Quando maior o numero, menos profundo é, ou seja, aparece na frente da tela, na frente dos outros elementos. */
+		z-index: 2;/*Neste caso, sem o z index maior, o menu ficaria atras do conteudo escrito no meio da pagina, uma vez que foi escrito primeiro.*/
 	}
 	nav .fa{
 		display: block;
@@ -153,4 +126,213 @@ nav .fa{
 	.nav-links ul{
 		padding: 30px;
 	}
+}
+
+/*------- course -------*/
+
+.course{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px;
+}
+h1{
+	font-size: 36px;
+	font-weight: 600;
+}
+p{
+	color: #777;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 22px; /*vertical distance between two lines of type, measured from the baseline of one line of type to the baseline of the next.*/
+	padding: 10px;
+}
+.row{
+	margin-top: 5%;
+	display: flex;
+	justify-content: space-between;
+}
+.course-col{
+	flex-basis: 31%;/*Dita o tamanho do flex filho*/
+	background: #fff3f3;
+	border-radius: 10px;
+	margin-bottom: 5%;
+	padding: 20px 12px;
+	box-sizing: border-box;
+	transition: 0.5s;/*????????*/
+}
+h3{
+	text-align: center;
+	font-weight: 600;
+	margin: 10px 0;
+}
+.course-col:hover{
+	box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);/*?????*/
+}
+@media(max-width: 700px){
+	.row{
+		flex-direction: column;
+	}
+}
+
+/*------ campus ------*/
+
+.campus{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-top: 50px;
+}
+.campus-col{
+	flex-basis: 32%;	
+	border-radius: 10px;
+	margin-bottom: 30px;
+	position: relative;
+	overflow: hidden;/*??????*/
+}
+.campus-col img{
+	width: 100%;/*??????*/
+	display: block;/*Foi o suficiente para deixar responsivo????????????????*/
+}
+.layer{
+	background: transparent;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: 0.5s;
+}
+.layer:hover{
+	background: rgba(226,0,0,0.7);
+}
+.layer h3{
+	width: 100%;
+	font-weight: 500;
+	color: #fff;
+	font-size: 26px;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);/*??????????*/
+	position: absolute;
+	opacity: 0;/*???????*/
+	transition: 0.5s;
+}
+.layer:hover h3{
+	bottom: 49%;
+	opacity: 1;
+}
+
+/*------ Facilities -------*/
+
+.facilities{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px;
+}
+
+.facilities-col{
+	flex-basis: 31%;
+	border-radius: 10px;/*???? pq esse e os 2 codigos a baixo????*/
+	margin-bottom: 5%;
+	text-align: left;
+}
+.facilities-col img{
+	width: 100%;
+	border-radius: 10px;
+}
+.facilities-col p{
+	padding: 0;/*???precisava desse padding?*/
+}
+.facilities-col h3{
+	margin-top: 16px;
+	margin-bottom: 15px;
+	text-align: left;
+}
+
+/*------ Testimonials -------*/
+
+.testimonials{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px;
+}
+.testimonial-col{
+	flex-basis: 44%;
+	border-radius: 10px;
+	margin-bottom: 5%;
+	text-align: left;
+	background: #fff3f3;
+	padding: 25px;
+	cursor: pointer;
+	display: flex;/*????????*/
+}
+.testimonial-col img{
+	height: 40px;
+	margin-left: 5px;/*??? como ele posicionou essa imagem???*/
+	margin-right: 30px;
+	border-radius: 50%;/*Foto perfil redonda*/
+}
+.testimonial-col p{
+	padding: 0;
+}
+.testimonial-col h3{
+	margin-top: 15px;
+	text-align: left;
+}
+.testimonial-col .fa{
+	color: #f44336;
+}
+@media(max-width: 700px){
+	.testimonial-col img{	
+		margin-left: 0px;/*Reposicionou a imagem no responsivo*/
+		margin-right: 15px;		
+	}
+}
+
+/*------ call to action ------*/
+
+.cta{
+	margin: 100px auto;
+	width: 80%;
+	background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../img/banner2.jpg);
+	background-position: center;
+	background-size: cover;
+	border-radius: 10px;
+	text-align: center;
+	padding: 100px 0;
+}
+.cta h1{
+	color: #fff;
+	margin-bottom: 40px;
+	padding: 0;
+}
+@media(max-width: 700px){
+	.cta h1{
+		font-size: 24px;
+	}
+}
+
+/*------ footer ------*/
+
+.footer{
+	width: 100%;
+	text-align: center;
+	padding: 30px 0;
+}
+.footer h4{
+	margin-bottom: 25px;
+	margin-top: 20px;
+	font-weight: 600;
+}
+.icons .fa{
+	color: #f44336;
+	margin: 0 13px;
+	cursor: pointer;
+	padding: 18px 0;
+}
+.fa-heart-o{
+	color: #f44336;
 }
