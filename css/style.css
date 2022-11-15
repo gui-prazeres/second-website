@@ -3,28 +3,39 @@
 	padding: 0;
 	font-family: 'Poppins', sans-serif;
 }
+
+
+
+
+
 .header{
 	width: 100%; /*for the image to occupy 100% of the width of the page*/
 	min-height: 100vh; /*Min height 100vh means the element should occupy the web browser viewport height. This is always 100 percent of the web browser's viewport height. If there is more content, the element will stretch more than the viewport's height*/
 	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../img/banner.png);/*to work the photo with css with gradient*/
 	background-position: center;/*to center the image*/
 	background-size: cover;/*Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges*/
-	position: relative;	/*The element is positioned relative to its normal position, so "left:20px" adds 20 pixels to the element's LEFT position
-
-	*/
+	position: relative;	/*The element is positioned relative to its normal position, so "left:20px" adds 20 pixels to the element's LEFT position... tudo que esiver dentro do realder como position absolute, se baseara no header relative aqui*/
 }
+
+
+
+
+
 nav{
 	display: flex;
 	justify-content: space-between;
+    
 	text-align: center;
 	padding: 2% 6%; /*Espaço interno da nav pai*/
-}
-nav img{
-	width: 150px;
+} 
+
+
+
+nav img{ width: 150px; /*Por algum motivo, manipula a imagem seguindo as proporçoes dela*/
 }
 .nav-links{
-	flex: 1;
-	text-align: right;
+	flex: 1; /* será o tamanho exato do conteúdo dentro dele */
+	text-align: right; /* move os links do menu, filhos da nav, para a direita */
 }
 .nav-links ul li{
 	list-style: none; /*Tira as bolinhas da lista*/
@@ -37,8 +48,11 @@ nav img{
 	text-decoration: none; /*Tirar underline do link*/
 	font-size: 13px;
 }
-.nav-links ul li::after{ /*Será criado apois o conteudo.. Serve para deixar a marcação mais limpa... pois sem ele seria necessario criar uma div e estilizar ela*/
-	content: ''; /*Cria o Pseudo Element seja criado*/
+
+
+
+.nav-links ul li::after{ /*Será criado apos o conteudo.. Serve para deixar a marcação mais limpa... pois sem ele seria necessario criar uma div e estilizar ela*/
+	content: ''; /*Para que o Pseudo Element seja criado*/
 	width: 0%;
 	height: 2px;
 	background: #f44336;
@@ -46,7 +60,7 @@ nav img{
 	margin: auto;
 	transition: 0.5s;
 	/*Gera efeitos de tempo de execução
-Segue a ordem (Apos os dois pontos são exemplos)
+Segue a ordem (Os dois pontos são exemplos)
 transition-property: all; 
 transition-duration: 2s;
 transition-timing-function: ease-out;
@@ -58,14 +72,55 @@ transition: all 2s ease-out 0;
 .nav-links ul li:hover::after{/*Acredito que sem este after, o hover aplicaria o efeito dele sem que o after do codigo acima fosse aplicado...*/
 	width: 100%;
 }
+
+
+
+nav .fa{
+	display: none; /*Voce não quer as 3 barrinhas no menu de tela grande de pc...*/
+}
+
+@media(max-width: 700px){
+	.text-box h1{
+		font-size: 20px;
+	}
+	.nav-links ul li{
+		display: block; /*menu voltar a ser lista*/
+	}
+	.nav-links{
+		position: absolute;
+		background: #f44336;
+		height: 100vh;
+		width: 200px;
+		top: 0;
+		right: -200px;
+		text-align: left;		
+		transition: 1s;
+		z-index: 2;/*Neste caso, sem o z index maior, o menu ficaria atras do conteudo escrito no meio da pagina, uma vez que foi escrito primeiro.*/
+	}
+	nav .fa{
+		display: block; /* para o menu sanduiche que estava display none reaparecer */
+		color: #fff;
+		margin: 10px;
+		font-size: 22px;
+		cursor: pointer;
+	}
+	.nav-links ul{
+		padding: 30px;
+	}
+}
+
+
+
+
+
 .text-box{
 	width: 90%; /*Largura da Div em relação a tela*/
 	color: #fff;
-	position: absolute;
+	position: absolute; /*Afinal, a section header tem position relative para ser pai des a absolute*/
 	top: 50%;
 	left: 50%;
 	text-align: center; /*Div ocupara o centro da tela*/
-	transform: translate(-50%,-50%);/*Acredito que seja um macete de centralização usando position absolute com transform translate.. pq sem o transform os valores seriam top 32% left 5%*/
+	transform: translate(-50%,-50%);/*Acredito que seja um macete de centralização usando position absolute com transform translate.. pq sem o transform os valores seriam top 32% left 5%... Pior que é um macete de ma pratica mesmo, pq utilizando flex box poderia ser mais limpo*/
 	
 }
 .text-box h1{
@@ -76,6 +131,9 @@ transition: all 2s ease-out 0;
 	font-size: 14px;
 	color: #fff;
 }
+
+
+
 .hero-btn{
 	cursor: pointer;
 	display: inline-block;
@@ -94,41 +152,9 @@ transition: all 2s ease-out 0;
 	transition: 1s;
 }
 
-nav .fa{
-	display: none; /*Voce não quer as 3 barrinhas no menu de tela grande de pc...*/
-}
 
-@media(max-width: 700px){
-	.text-box h1{
-		font-size: 20px;
-	}
-	.nav-links ul li{
-		display: block;
-	}
-	.nav-links{
-		position: absolute;
-		background: #f44336;
-		height: 100vh;
-		width: 200px;
-		top: 0;
-		right: -200px;
-		text-align: left;		
-		transition: 1s;
-		z-index: 2;/*Neste caso, sem o z index maior, o menu ficaria atras do conteudo escrito no meio da pagina, uma vez que foi escrito primeiro.*/
-	}
-	nav .fa{
-		display: block;
-		color: #fff;
-		margin: 10px;
-		font-size: 22px;
-		cursor: pointer;
-	}
-	.nav-links ul{
-		padding: 30px;
-	}
-}
 
-/*------- course -------*/
+
 
 .course{
 	width: 80%;
@@ -147,6 +173,9 @@ p{
 	line-height: 22px; /*vertical distance between two lines of type, measured from the baseline of one line of type to the baseline of the next.*/
 	padding: 10px;
 }
+
+
+
 .row{
 	margin-top: 5%;
 	display: flex;
@@ -156,26 +185,29 @@ p{
 	flex-basis: 31%;/*Dita o tamanho do flex filho*/
 	background: #fff3f3;
 	border-radius: 10px;
-	margin-bottom: 5%;
+	margin-bottom: 5%; /* Para afastar mais a seção de baixo */
 	padding: 20px 12px;
-	box-sizing: border-box;
-	transition: 0.5s;/*????????*/
-}
-h3{
-	text-align: center;
-	font-weight: 600;
-	margin: 10px 0;
+	box-sizing: border-box; /*Assim, o width levará em consideração o padding e a borda. Será um width com mais precisão*/
+	transition: 0.5s;/* Se só tiver setado o tempo, ele seta o tempo para a transição ocorrer... que no caso é o box shadow do course-hover */
 }
 .course-col:hover{
-	box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);/*?????*/
+	box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);/* contorno/borda fosco estilo sombra que surge devagar por conta da transition ao passar com o mouse em cima*/
 }
 @media(max-width: 700px){
 	.row{
 		flex-direction: column;
 	}
 }
+h3{
+	text-align: center;
+	font-weight: 600;
+	margin: 10px 0;
+}
 
-/*------ campus ------*/
+
+
+
+
 
 .campus{
 	width: 80%;
@@ -223,7 +255,9 @@ h3{
 	opacity: 1;
 }
 
-/*------ Facilities -------*/
+
+
+
 
 .facilities{
 	width: 80%;
@@ -251,7 +285,9 @@ h3{
 	text-align: left;
 }
 
-/*------ Testimonials -------*/
+
+
+
 
 .testimonials{
 	width: 80%;
@@ -292,7 +328,9 @@ h3{
 	}
 }
 
-/*------ call to action ------*/
+
+
+
 
 .cta{
 	margin: 100px auto;
@@ -315,7 +353,9 @@ h3{
 	}
 }
 
-/*------ footer ------*/
+
+
+
 
 .footer{
 	width: 100%;

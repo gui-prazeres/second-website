@@ -1,0 +1,226 @@
+Entendendo Segundo Site
+
+
+
+                   
+                   
+                   HTML
+
+
+
+
+
+section.header{ ***Recebe a imagem de fundo e trabalha ela
+
+    nav { *** Só manipula de fato o que tem dentro na versão mobile, separando a logo e o menu sanfuiche em cada polo da nav por meio do space betwen do flex, e tb faz dinfereça no alinhamento dos elementos (flex) e no posicionamento do bloco como um todo atraves do padding 
+    
+        a (com o logo no canto esquerdo da nav)
+        
+        div (retangulo esquerdo) *** Titu div é ignorada para nomeação. Essa div mesmo tem classe de nome nav-link... Essa div esta com text-align rigth... movendo os filhos para a direita. No caso os links do menu
+        
+            ul *** São linkados no css por ul e li da nav-link
+            
+                li *** trabalha cada link no css, Tira as bolinhas da lista... Sair da lista da ul e ficar lado a lado, Espaço entre os links
+                
+                     hidden HTML - no css agora ele adiciona o effeito nas ul li 
+                
+                    a *** trabalha agora a ul li a tudo junto, trabalhando a cor, tirando underline, setando a font
+                    
+                li a
+                li a
+                li a
+                li a
+    }
+   
+css @media para delimitar o responsivo
+
+-alterar o tamanho da font do h1
+-setar em lista novamente os links de menu, estilizar como ficarão em relação a posicionamento na coluna de menu
+-gambiarra para o menu aparecer quase que so com css
+-setar o z index, uma vez que o meno é uma coluna enorme na pagina que por ser escrita antes do corpo no meio da pagina, acabaria por ficar por ser coberta por este conteudo.
+-setando ambos x e sanduich da mesma maneira com mesmo nome de classe
+   
+    div.text-box{
+    
+        h1 *** trabalha a font
+        p *** trabalha afont, margem e cor
+
+        a botao *** botão nada mais é que uma a com classe trabalhada no css.. trabalha o ponteiro, retira o sublinhado, seta borda, padding, font.. os efeitos de hover.. ja o display e o position aqui eu não entendo bem o pq.. sem o display inline-block a borda fica fosca...    
+    }    
+}
+
+
+
+
+
+section.course{ *** Set de coisas basicas, como margem no auto para manter centralizado o bloco. Assim como text align center para centralizar o texto, e um padding top pára se afastar da imagem acima e uma width 80% para o conteudo não ficar grudado nas paredes
+
+    h1 *** aqui ele trabalha ambos h1 e p de forma geral para o site inteiro. setando afastamento entre as linhas no é atraves do line-heigt
+    p
+    
+    div.row *** Aqui a gente entra com o display flex
+    
+        div.course-col *** Aqui ja temos que setar o tamanho de cada div filho, e tambem fazemos uma borda estilizada com hover.. alem de tratar o h3 de forma basica.
+            
+            h3
+            p
+
+        div.course-col
+            
+            h3
+            p
+
+        div.course-col
+            
+            h3
+            p
+
+}
+
+section.campus{
+
+    h1
+    
+    p
+    
+    div.row
+    
+        div.campus-col
+        
+            img
+            
+            div.layer
+            
+                h3
+        
+        div.campus-col
+        
+            img
+            
+            div.layer
+            
+                h3
+        
+        div.campus-col
+        
+            img
+            
+            div.layer
+            
+                h3               
+}
+
+section.facilities{
+
+    h1
+    
+    p
+    
+    div.row
+    
+        div.facilities
+            
+            img
+            h3
+            p
+        
+        div.facilities
+            
+            img
+            h3
+            p
+        
+        div.facilities
+            
+            img
+            h3
+            p
+}
+
+section.testimonials{
+
+    h1
+    p
+    
+    div.row
+        
+        div.testimonial-col
+            
+            img
+            
+            div
+                
+                p
+                h3
+                i (icone de estrela)
+                i (icone de estrela)
+                i (icone de estrela)
+                i (icone de estrela)
+                i (icone de estrela)
+                
+        div.testimonial-col
+            
+            img
+            
+            div
+                
+                p
+                h3
+                i (icone de estrela)
+                i (icone de estrela)
+                i (icone de estrela)
+                i (icone de estrela)
+                i (icone de estrela)
+}
+
+section.cta{
+
+    h1
+    a
+}
+
+section.footer{
+
+    h4
+    p
+    
+    div.icons
+        
+        i (icones)
+        i (icones)
+        i (icones)
+        i (icones)
+    
+    p
+}
+
+sripti{
+
+    seção pequena com Js
+
+}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                
+                
+                
+                
+                
+        
+        
+    
+    
+
+
+
+
+
+
