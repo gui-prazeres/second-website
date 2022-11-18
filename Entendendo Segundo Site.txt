@@ -1,49 +1,49 @@
-Entendendo Segundo Site
-
-
-
-                   
-                   
                    HTML
 
+Questões Responsivas
+Lembre-se de textar o codigo na versão reduzida, pois ele pode atuar apenas nesse caso...
 
-
-comentarios
-
+Afastamento e Simetria visual
 Tenha boa organização/padrão de codigo e assim gerenciar bem os espaços e simetrias na pagina 
 Tirar uma propriedade no css levará a uma atribuição em herança do pai. Lembre-se disso
+Padding ou margin para afastamento? 
+Margin... Pois padding quando a estrutura contem background img afeta o afastamento só que dentro da propria imagem.
+Ilusão de otica
+letras gerarão efeito visual de distancia diferente de uma imagem
 
-Padding como afastamento? É melhor margin... Padding quando a estrutura contem background img afeta o afastamento dentro da imagem.
-No entanto, a padding é uma estrutura de mais facil manutenção no dev tools.
 
-sem contar que alem de tudo isso ainda existe a ilusao de otica... pois se toda seção acaba com imagem, e uma acaba com texto... o proprio padding branco do texto ja causara a ilusão de que naquela região esta mais espaçosa.
 
-a *** não é tratado sozinho... apenas dentro do nav links junto com o ul il.. como nav img que nesse caso nem nome de classe teve... e com a classe de hero-btt..
+Comentários para o segundoSite
+a *** não é nunca sozinho... nav links ul il.. nav img... hero-btt..
 
-A gente não coloca nome de tag no css... apenas quando não setamos classes ou ids... que para podermos referenciar as tags, precisamos ai sim apontar a tag pai para alcançar a tag filho... E só precisamos fazer isso pq não queremos que as propriedades para a suposta tag filho virem propriedades daquela mesma tag globalmente
 
+
+Estrutura
+Se coloca nome de tag no css apenas quando se trata de propriedade global, ou filho de classe/id 
 Classe                   .nav-links ul li a {}
 filho de tag             nav img{}
 filho de classe          .layer h3 {}
 
-E se vc usar o developer tools do navegador, ele vai dar a tag antes da classe, mesmo que o CSS funcione sem essa exigencia. E a ferramenta faz isso para ser o mais completa possivel para te fornecer informações
 
-Interessante notar que no CSS, o header tem as propriedades dele dentro do escopo dele. Depois disso ainda vem a nav, tex-box e o botão... cada um com sua propriedade, escritas fora do escopo do header... e presente visualmente nele como uma secunda camada de aparencia... É diferente da linguagem de procamação que contem os filhos. Aqui são formadas camadas independentes e que podem não serem consideradas filhas devido aos respectivos nomes que não se fazem necessarios de existir.
+
+Entendimentro de Escopo CSS
+O Header tem as propriedades no proprio escopo, assim como a nav, tex-box, que ficam visualmente em cima do header, presente dentro dele no HTML, mas setado cada um individualmente no CSS.
+
 
 
 section.header{ ***Recebe a imagem de fundo e trabalha ela
 
-    nav { *** Só manipula de fato o que tem dentro na versão mobile, separando a logo e o menu sanfuiche em cada polo da nav por meio do space betwen do flex, e tb faz dinfereça no alinhamento dos elementos (flex) e no posicionamento do bloco como um todo atraves do padding 
+    nav { *** Propriedades focado no mobile, separando a logo e o menu sanfuiche em cada polo(space betwen do flex), alinhamento dos elementos (flex) e no posicionamento do bloco como um todo (padding) 
     
-        a (com o logo no canto esquerdo da nav)
+        a (logo no canto esquerdo da nav)
         
-        div (retangulo esquerdo) *** Titu div é ignorada para nomeação. Essa div mesmo tem classe de nome nav-link... Essa div esta com text-align rigth... movendo os filhos para a direita. No caso os links do menu
+        div (retangulo direito) *** Div com nome de nav-link... text-align rigth... movendo os filhos para a direita. No caso os links do menu
         
-            ul *** São linkados no css por ul e li da nav-link
+            ul *** São tratados juntos no css por ul e li da nav-link
             
-                li *** trabalha cada link no css, Tira as bolinhas da lista... Sair da lista da ul e ficar lado a lado, Espaço entre os links
+                li *** trabalha cada link no css, Tira as bolinhas da lista... alinha com espaço entre eles
                 
-                     hidden HTML - no css agora ele adiciona o effeito nas ul li 
+                     hidden HTML (se refere as propriedades pai?) - no css agora ele adiciona o effeito nas ul li 
                 
                     a *** trabalha agora a ul li a tudo junto, trabalhando a cor, tirando underline, setando a font
                     
