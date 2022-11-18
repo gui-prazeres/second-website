@@ -4,11 +4,45 @@
 	font-family: 'Poppins', sans-serif;
 }
 
+section{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	margin-top: 100px;
+}
+
+.row{
+	margin-top: 0% 5%;
+	display: flex;
+	justify-content: space-between;
+}
+
+h1{
+	font-size: 36px;
+	font-weight: 600;
+}
+
+h3{
+	text-align: center;
+	font-weight: 600;
+	margin: 10px 0;
+}
+
+p{
+	color: #777;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 22px; /*vertical distance between two lines of type, measured from the baseline of one line of type to the baseline of the next.*/
+	padding: 10px;
+}
+
+
 
 
 
 
 .header{
+	margin-top: 0px;
 	width: 100%; /*for the image to occupy 100% of the width of the page*/
 	min-height: 100vh; /*Min height 100vh means the element should occupy the web browser viewport height. This is always 100 percent of the web browser's viewport height. If there is more content, the element will stretch more than the viewport's height*/
 	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../img/banner.png);/*to work the photo with css with gradient*/
@@ -16,6 +50,7 @@
 	background-size: cover;/*Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges*/
 	position: relative;	/*The element is positioned relative to its normal position, so "left:20px" adds 20 pixels to the element's LEFT position... tudo que esiver dentro do realder como position absolute, se baseara no header relative aqui*/
 }
+
 
 
 
@@ -33,7 +68,7 @@ nav{
 
 nav img{ width: 150px; /*Por algum motivo, manipula a imagem seguindo as proporçoes dela*/
 }
-.nav-links{
+.nav-links{/*É uma div contendo o nome de nav-links.. por isso que eu confundi achando que a tag html tinha que ser usada antes do nome da classe no css*/
 	flex: 1; /* será o tamanho exato do conteúdo dentro dele */
 	text-align: right; /* move os links do menu, filhos da nav, para a direita */
 }
@@ -72,44 +107,6 @@ transition: all 2s ease-out 0;
 .nav-links ul li:hover::after{/*Acredito que sem este after, o hover aplicaria o efeito dele sem que o after do codigo acima fosse aplicado...*/
 	width: 100%;
 }
-
-
-
-nav .fa{
-	display: none; /*Voce não quer as 3 barrinhas no menu de tela grande de pc...*/
-}
-
-@media(max-width: 700px){
-	.text-box h1{
-		font-size: 20px;
-	}
-	.nav-links ul li{
-		display: block; /*menu voltar a ser lista*/
-	}
-	.nav-links{
-		position: absolute;
-		background: #f44336;
-		height: 100vh;
-		width: 200px;
-		top: 0;
-		right: -200px;
-		text-align: left;		
-		transition: 1s;
-		z-index: 2;/*Neste caso, sem o z index maior, o menu ficaria atras do conteudo escrito no meio da pagina, uma vez que foi escrito primeiro.*/
-	}
-	nav .fa{
-		display: block; /* para o menu sanduiche que estava display none reaparecer */
-		color: #fff;
-		margin: 10px;
-		font-size: 22px;
-		cursor: pointer;
-	}
-	.nav-links ul{
-		padding: 30px;
-	}
-}
-
-
 
 
 
@@ -154,38 +151,53 @@ nav .fa{
 
 
 
-
-
-.course{
-	width: 80%;
-	margin: auto;
-	text-align: center;
-	padding-top: 100px;
-}
-h1{
-	font-size: 36px;
-	font-weight: 600;
-}
-p{
-	color: #777;
-	font-size: 14px;
-	font-weight: 300;
-	line-height: 22px; /*vertical distance between two lines of type, measured from the baseline of one line of type to the baseline of the next.*/
-	padding: 10px;
+/* A media a baixo precisa ser posicionada apos o codigo inicial ser escrito... a ordem no css importa.*/
+nav .fa{
+	display: none; /*Voce não quer as 3 barrinhas no menu de tela grande de pc...*/
 }
 
 
 
-.row{
-	margin-top: 5%;
-	display: flex;
-	justify-content: space-between;
+@media(max-width: 700px){
+	.text-box h1{
+		font-size: 20px;
+	}
+	.nav-links ul li{
+		display: block; /*menu voltar a ser lista*/
+	}
+	.nav-links{
+		position: absolute;
+		background: #f44336;
+		height: 100vh;
+		width: 200px;
+		top: 0;
+		right: -200px;
+		text-align: left;		
+		transition: 1s;
+		z-index: 2;/*Neste caso, sem o z index maior, o menu ficaria atras do conteudo escrito no meio da pagina, uma vez que foi escrito primeiro.*/
+	}
+	nav .fa{
+		display: block; /* para o menu sanduiche que estava display none reaparecer */
+		color: #fff;
+		margin: 10px;
+		font-size: 22px;
+		cursor: pointer;
+	}
+	.nav-links ul{
+		padding: 30px;
+	}
 }
+
+
+
+
+
+
 .course-col{
+	margin-top: 30px;
 	flex-basis: 31%;/*Dita o tamanho do flex filho*/
 	background: #fff3f3;
 	border-radius: 10px;
-	margin-bottom: 5%; /* Para afastar mais a seção de baixo */
 	padding: 20px 12px;
 	box-sizing: border-box; /*Assim, o width levará em consideração o padding e a borda. Será um width com mais precisão*/
 	transition: 0.5s;/* Se só tiver setado o tempo, ele seta o tempo para a transição ocorrer... que no caso é o box shadow do course-hover */
@@ -198,35 +210,24 @@ p{
 		flex-direction: column;
 	}
 }
-h3{
-	text-align: center;
-	font-weight: 600;
-	margin: 10px 0;
-}
 
 
 
 
 
 
-.campus{
-	width: 80%;
-	margin: auto;
-	text-align: center;
-	padding-top: 50px;
-}
 .campus-col{
 	flex-basis: 32%;	
 	border-radius: 10px;
-	margin-bottom: 30px;
+	margin-top: 30px;
 	position: relative;
-	overflow: hidden;/*??????*/
+	overflow: hidden;/*o que tiver dentro do campus-col sera escondido (hidden) pela borda. não havera overflow...*/
 }
 .campus-col img{
-	width: 100%;/*??????*/
-	display: block;/*Foi o suficiente para deixar responsivo????????????????*/
+	width: 100%;/*é o que força a imagem respeitar a largura do flex filho e ajusta a altura tb da imagem junto para manter as proporções da imagem*/
+	display: block;/*influenciou apenas das bordas arrendondadas inferiores.. n entendi direito se tem algo alem e pq fuinciona assim*/
 }
-.layer{
+.layer{/*Tudo isso para posicionar a div que comtem o h3 centralizado e na regiao inferior da imagem.*/
 	background: transparent;
 	height: 100%;
 	width: 100%;
@@ -245,9 +246,9 @@ h3{
 	font-size: 26px;
 	bottom: 0;
 	left: 50%;
-	transform: translateX(-50%);/*??????????*/
+	transform: translateX(-50%);/*Para auxiliar deixar a palavra em baixo... e receber a localização que falta com o hover e junto ao transition poder subir... acho..*/
 	position: absolute;
-	opacity: 0;/*???????*/
+	opacity: 0;/*Para esconder a palavra... pois ela ja esta na imanem so não aparece... aparecera no hover com opacidade 1*/
 	transition: 0.5s;
 }
 .layer:hover h3{
@@ -259,29 +260,22 @@ h3{
 
 
 
-.facilities{
-	width: 80%;
-	margin: auto;
-	text-align: center;
-	padding-top: 100px;
-}
 
 .facilities-col{
+	margin-top: 30px;
 	flex-basis: 31%;
-	border-radius: 10px;/*???? pq esse e os 2 codigos a baixo????*/
-	margin-bottom: 5%;
-	text-align: left;
+	text-align: left; /*Sem isso, txt fica desalinhado*/
+	border-radius: 10px;/*???? pq esse e o codigo a baixo? Não vejo eles fazendo diferença. Ate pq o border-radius que faz diferença esta presente no css da imagem*/
 }
 .facilities-col img{
 	width: 100%;
 	border-radius: 10px;
 }
 .facilities-col p{
-	padding: 0;/*???precisava desse padding?*/
+	padding: 0;/*zerou o padding global ja predeterminado.. alteração estetica*/
 }
 .facilities-col h3{
-	margin-top: 16px;
-	margin-bottom: 15px;
+	margin: 0 auto;
 	text-align: left;
 }
 
@@ -289,27 +283,25 @@ h3{
 
 
 
-.testimonials{
-	width: 80%;
-	margin: auto;
-	text-align: center;
-	padding-top: 100px;
-}
+
 .testimonial-col{
 	flex-basis: 44%;
 	border-radius: 10px;
-	margin-bottom: 5%;
+	margin-top: 30px;
 	text-align: left;
 	background: #fff3f3;
 	padding: 25px;
 	cursor: pointer;
-	display: flex;/*????????*/
+	display: flex;/*Pq tem imagem e texto... para ficar um do lado do outro, flex ja resolve de cara*/
 }
 .testimonial-col img{
 	height: 40px;
-	margin-left: 5px;/*??? como ele posicionou essa imagem???*/
+	margin-left: 5px;
 	margin-right: 30px;
 	border-radius: 50%;/*Foto perfil redonda*/
+}
+#testimonialColum1{
+	margin-right: 15px;
 }
 .testimonial-col p{
 	padding: 0;
@@ -321,10 +313,16 @@ h3{
 .testimonial-col .fa{
 	color: #f44336;
 }
+
+
+
 @media(max-width: 700px){
 	.testimonial-col img{	
 		margin-left: 0px;/*Reposicionou a imagem no responsivo*/
 		margin-right: 15px;		
+	}
+	#testimonialColum1{
+		margin-right: 0px;
 	}
 }
 
@@ -332,19 +330,20 @@ h3{
 
 
 
+
 .cta{
-	margin: 100px auto;
+	margin-top: 125px;
 	width: 80%;
 	background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../img/banner2.jpg);
 	background-position: center;
 	background-size: cover;
 	border-radius: 10px;
 	text-align: center;
-	padding: 100px 0;
+	padding: 100px 0; /*Dita o quanto da imagem vc quer que apareça*/
 }
-.cta h1{
+.cta h1{/*h1 ficou centralizado mas de verdade não sei pq o h1 nao ficou colado em cima estilo começo.. mas em vez disso ficou quase no meio da imagem... n sei pq??????*/
 	color: #fff;
-	margin-bottom: 40px;
+	margin-bottom: 40px; /*o quao longe vc quer que fique do botao*/
 	padding: 0;
 }
 @media(max-width: 700px){
@@ -360,18 +359,18 @@ h3{
 .footer{
 	width: 100%;
 	text-align: center;
-	padding: 30px 0;
+	margin-top: 115px;
 }
 .footer h4{
 	margin-bottom: 25px;
 	margin-top: 20px;
 	font-weight: 600;
 }
-.icons .fa{
+.icons .fa{ /*fiquei procurando o icons dentro da mesma tag class fa, sendo que estava na div pai... lembrando que por ter fa no final... essas propriedades não sao da div... sao dos filhos dela...*/
 	color: #f44336;
-	margin: 0 13px;
+	margin: 0 13px; /*Para posicionamento*/
 	cursor: pointer;
-	padding: 18px 0;
+	padding: 18px 0; /*Para posicionamento*/
 }
 .fa-heart-o{
 	color: #f44336;

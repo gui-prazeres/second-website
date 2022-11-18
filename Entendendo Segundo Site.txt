@@ -8,6 +8,27 @@ Entendendo Segundo Site
 
 
 
+comentarios
+
+Tenha boa organização/padrão de codigo e assim gerenciar bem os espaços e simetrias na pagina 
+Tirar uma propriedade no css levará a uma atribuição em herança do pai. Lembre-se disso
+
+Padding como afastamento? É melhor margin... Padding quando a estrutura contem background img afeta o afastamento dentro da imagem.
+No entanto, a padding é uma estrutura de mais facil manutenção no dev tools.
+
+sem contar que alem de tudo isso ainda existe a ilusao de otica... pois se toda seção acaba com imagem, e uma acaba com texto... o proprio padding branco do texto ja causara a ilusão de que naquela região esta mais espaçosa.
+
+a *** não é tratado sozinho... apenas dentro do nav links junto com o ul il.. como nav img que nesse caso nem nome de classe teve... e com a classe de hero-btt..
+
+A gente não coloca nome de tag no css... apenas quando não setamos classes ou ids... que para podermos referenciar as tags, precisamos ai sim apontar a tag pai para alcançar a tag filho... E só precisamos fazer isso pq não queremos que as propriedades para a suposta tag filho virem propriedades daquela mesma tag globalmente
+
+Classe                   .nav-links ul li a {}
+filho de tag             nav img{}
+filho de classe          .layer h3 {}
+
+E se vc usar o developer tools do navegador, ele vai dar a tag antes da classe, mesmo que o CSS funcione sem essa exigencia. E a ferramenta faz isso para ser o mais completa possivel para te fornecer informações
+
+Interessante notar que no CSS, o header tem as propriedades dele dentro do escopo dele. Depois disso ainda vem a nav, tex-box e o botão... cada um com sua propriedade, escritas fora do escopo do header... e presente visualmente nele como uma secunda camada de aparencia... É diferente da linguagem de procamação que contem os filhos. Aqui são formadas camadas independentes e que podem não serem consideradas filhas devido aos respectivos nomes que não se fazem necessarios de existir.
 
 
 section.header{ ***Recebe a imagem de fundo e trabalha ela
@@ -32,13 +53,7 @@ section.header{ ***Recebe a imagem de fundo e trabalha ela
                 li a
     }
    
-css @media para delimitar o responsivo
 
--alterar o tamanho da font do h1
--setar em lista novamente os links de menu, estilizar como ficarão em relação a posicionamento na coluna de menu
--gambiarra para o menu aparecer quase que so com css
--setar o z index, uma vez que o meno é uma coluna enorme na pagina que por ser escrita antes do corpo no meio da pagina, acabaria por ficar por ser coberta por este conteudo.
--setando ambos x e sanduich da mesma maneira com mesmo nome de classe
    
     div.text-box{
     
@@ -51,18 +66,28 @@ css @media para delimitar o responsivo
 
 
 
+css @media para delimitar o responsivo
+
+-alterar o tamanho da font do h1
+-setar em lista novamente os links de menu, estilizar como ficarão em relação a posicionamento na coluna de menu
+-gambiarra para o menu aparecer quase que so com css
+-setar o z index, uma vez que o meno é uma coluna enorme na pagina que por ser escrita antes do corpo no meio da pagina, acabaria por ficar por ser coberta por este conteudo.
+-setando ambos x e sanduich da mesma maneira com mesmo nome de classe
 
 
-section.course{ *** Set de coisas basicas, como margem no auto para manter centralizado o bloco. Assim como text align center para centralizar o texto, e um padding top pára se afastar da imagem acima e uma width 80% para o conteudo não ficar grudado nas paredes
 
-    h1 *** aqui ele trabalha ambos h1 e p de forma geral para o site inteiro. setando afastamento entre as linhas no é atraves do line-heigt
+
+
+section.course{ *** Set de coisas basicas, como margem no auto para manter centralizado o bloco e um width 80% para o conteudo não ficar grudado nas paredes (Parece essa ser uma combinação para ser centralizando e tendo filhos filhos flex talvez...). Assim como text align center para centralizar o texto, e um padding top pára se afastar da imagem acima
+
+    h1 *** aqui ele trabalha ambos h1 e p de forma geral antes nunca feito para o site inteiro. setando afastamento entre as linhas no é atraves do line-heigt
     p
     
-    div.row *** Aqui a gente entra com o display flex
+    div.row *** Aqui a gente entra com o display flex, justify content e uma margin top
     
-        div.course-col *** Aqui ja temos que setar o tamanho de cada div filho, e tambem fazemos uma borda estilizada com hover.. alem de tratar o h3 de forma basica.
+        div.course-col *** Aqui ja temos que setar o tamanho de cada div filho, e tambem fazemos uma borda estilizada e sombreada com hover e transition.. alem de .. e a media abaixo de 700px para ficarem em coluna com flex direction
             
-            h3
+            h3 *** seta o h3 de forma geral para todo h3... e seta de forma basica, centralizado, bould e margin
             p
 
         div.course-col
@@ -77,22 +102,35 @@ section.course{ *** Set de coisas basicas, como margem no auto para manter centr
 
 }
 
-section.campus{
 
-    h1
+
+
+
+section.campus{ *** seta o widthe margin auto, text align center para os filhos, padding top para espaço de cima
+
+    h1 *** ja setado
     
-    p
+    p *** ja setado
     
-    div.row
+    div.row *** ja setado
     
-        div.campus-col
+        div.campus-col *** por ser filha flex da row, flex basis para tamanho, border radius, so que com maior margem abaixo.. e tendo position relative (ja as imagens tem display block filhas, e isso só serviu para não ultrapassarem as bordas inferiores, enquanto as superiores foram controladas pelo overflow hidden.. tem coisas que preciso entender ainda.)e overflow hidden para que o conteudo de dentro não transborde as bordas, que no caso seria a imagem transbordando as bordas arredondadas, uma vez que a imagem é retangular.
         
-            img
+            img *** width 100% e display block. A imagem nativa é grande. Ela não fica enorme no site por conta do width 100% que redimensiona ela para caber dentro da largura flex do filho campus-col que esta sendo forçado a ficar em linha??.. sem ele ela ficaria enorme, cortada uma do lado da outra por conta do display flex, que por padrão vem inline... e Elas fazem uso do justify contente do row (ja que o campus-col ja é o filho) para aproveitar o espaço em linha e transferi-lo para ficar entre elas.. reaproveitar a linha... deixando espaço entre as imagens... porem isso so acontece pq o tamanho de cada flex filho foi setado... forçando a existencia de espaço para ser utilizado para isso.
+
+            -------- O que eu entendi... Flex deixa em linha.. o que mantem a imagem compactada é o width 100%... pq ele deve interagir com o flex display que é inline. Sabe que a pagina tem espaço limitado. sendo 100% respeitara os outros filhos e o tamanho da pagina.
+            Tirando o width 100%. o overflow hiden ainda segurará a imagem dentro da pagina sem criar scroll horizontal. ja que a imagem não vai transbordar o tamanho do filho flex.
+            A minha duvida é... quando que os elementos flex inline irão para a ilha de baixo? pq o elemento nativo poderia ser enorma e que por isso ja servir como coluna... como o width tem efeito nisso? 
             
-            div.layer
+            div.layer *** contendo os elementos width heigh 100%, position absolute, top e lef ... Tudo isso para posicionar a div que comtem o h3 centralizado e na regiao inferior da imagem.
             
-                h3
+                h3 *** exmplicação melhor abaixo 
         
+O hover funciona na layer trazendo a cor vermelha, e no h3 trazendo opacidade, e bottom:49%... para poder ir de baixo para cima com o transicion (eu imagino). pq ele tem aquele esquema do transform translateX(-50%) (só que no text-box era diferente ja que era transform translate (-50%, -50%)) para poder deixar o elemento no meio da tela. 
+E o elemento da opacidade... Para esconder a palavra... pois ela ja esta na imanem so não aparece... aparecera no hover com opacidade 1
+
+To achando um conteudo avançado demais para este momento... e talvez ate desnecessario pq provavelmente eu usaria js??? o codigo tem que ser facil de ser entendido para poder receber manutenção no futuro. Vc programa para que outros humanos entendam.
+
         div.campus-col
         
             img
@@ -110,43 +148,58 @@ section.campus{
                 h3               
 }
 
-section.facilities{
 
-    h1
+
+
+
+section.facilities{ *** Basico da section anterior
+
+    h1 *** Ja setado
     
-    p
+    p *** Ja setado
     
-    div.row
+    div.row *** Ja setado
     
-        div.facilities
+        div.facilities-col *** Seta o tamanho dos flex filhos, defina borda arrendondada, texto a esquerda e margin top que eu editei padrao para todas as colunas.. inclusive deve ter coluna de outras sextions que eu não atualizei isso do margin top... mas no codigo esta certo.
+            
+            img *** setado width para um resize da imagem e um border radius nela.
+
+            h3 *** editei e deixei margin 0 e auto.. nao queria o texto que fica em baixo da imagem se referindo a ela, muito distante dela...
+            tem tb alinhamento a esquerda.. text align costuma ser usado para filhos, mas no caso de um texto ele aplica a si proprio... E caso todas essas propriedades não fossem setadas, seriam absorvidas as proriedades pai setadas
+
+            p *** zerou o padding setado globalmente para este p em especifico
+        
+        div.facilities-col
             
             img
             h3
             p
         
-        div.facilities
-            
-            img
-            h3
-            p
-        
-        div.facilities
+        div.facilities-col
             
             img
             h3
             p
 }
 
-section.testimonials{
+section.testimonials{ 
+    *** set padrao de section (mas como cada uma tem pequenas alterações, teve que cada uma ser setada individualmente... se bem que dava sim para refatorar num css section... e no restante só fazer as respectivas modificações... fato... o que é melhor? como o site todo segue um padrão... é melhor fazer tudo numa section só.. e se necessario, modifica-la pontualmente no elemento em especifico)
+
+Apliquei... lembrando que o header foi considerado section... e tive que setar nele para não ficar desconfigurado.
 
     h1
     p
+
+
     
     div.row
         
-        div.testimonial-col
+        div.testimonial-col *** coluna padrao... alteração no tamanho do tamanho de cada columa para 44% ja que são apenas duas... e como são blocos so de texto, estilo mensagem postit, tem um background com passing.. modificação no cursor dando ideia de cliq e um flex para deixar a foto do lado da mensagem de forma pratica.. um padding global de 25px para ter espaco entre a foto e o que esta escrito das bordas.
+        Adicionei um id para a primeira colune... com uma margin minima a direita... para não unir os dois postits laterais em dimensoes de tablets. E retirei a margin lateral na media abaixo de 700px para não dar diferencao quando um abaixo do outro.
             
-            img
+            img *** height para dimensionar proporcionalmente a imagem... dessa vez na imagem redonda funciona... não sei no caso do width nos outros casos...
+            margins horizontais para posicionar bem a imagem entre a borda lateral e o texto... nao sei como funciona pq n tem position relativa nem block. mas consta como display block position static.. float none..
+            e foi bacana usar o border radius para deixar a imagem redonda
             
             div
                 
@@ -173,18 +226,20 @@ section.testimonials{
                 i (icone de estrela)
 }
 
-section.cta{
+section.cta{ *** resetei a margin top por conta da ilusao da ilusao de otica gerada pela section acima interagir com o fim de um p que tem muito vazio por serem frases.
+é uma section, entao tem todos aqueles parametros, fora a backgound image trabalhada com gradiente.. e as propriedades de imagem de fundo... com algo escrito nela.
+setando padding aqui para dizer o quanto da imagem vc quer que apareça
 
-    h1
+    h1 *** h1 ficou centralizado mas de verdade não sei pq o h1 nao ficou colado em cima estilo começo.. mas em vez disso ficou quase no meio da imagem... n sei pq?
     a
 }
 
-section.footer{
+section.footer{ *** setup padrao
 
-    h4
-    p
+    h4 *** posicao botton top pela estetica
+    p *** ja setado
     
-    div.icons
+    div.icons *** questoes basicas de estetica e posicionamento
         
         i (icones)
         i (icones)
