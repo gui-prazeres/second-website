@@ -1,12 +1,14 @@
 
-/* table of contents 
+/* 
 
-1. global styles
+===== table of contents =====
 
-2. typography
+- global styles
 
-3. components
-	3.1 buttons
+- typography
+
+- components
+	buttons
 
 */
 
@@ -19,6 +21,17 @@
 	padding: 0;
 	font-family: 'Poppins', sans-serif;
 }
+
+/*	=============
+	colors
+	=============  */
+
+	:root {
+		--textColor: #777;
+		--backgroundTextColor: #fff;
+		--backgroundSmallThingsCollor: #f44336;
+		--backgroundColumColor: #fff3f3;
+	}
 
 /*	=============
 	typography
@@ -36,7 +49,7 @@ h3{
 }
 
 p{
-	color: #777;
+	color: var(--textColor);
 	font-size: 14px;
 	font-weight: 300;
 	line-height: 22px; /*vertical distance between two lines of type*/
@@ -104,7 +117,7 @@ nav img{
 }
 
 .nav-links ul li a{
-	color: #fff;
+	color: var(--backgroundTextColor);
 	text-decoration: none; /*remove underline from link*/
 	font-size: 13px;
 }
@@ -115,7 +128,7 @@ nav img{
 	content: ''; /*For the Pseudo Element to be created*/
 	width: 0%;
 	height: 2px;
-	background: #f44336;
+	background: var(--backgroundSmallThingsCollor);
 	display: block;
 	margin: auto;
 	transition: 0.5s;
@@ -130,7 +143,7 @@ nav img{
 
 .text-box{
 	width: 90%; /*Div width in relation to screen*/
-	color: #fff;
+	color: var(--backgroundTextColor);
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -146,7 +159,7 @@ nav img{
 .text-box p{
 	margin: 10px 0 40px;/*move a little away from the h1 and more from the button*/
 	font-size: 14px;
-	color: #fff;
+	color: var(--backgroundTextColor);
 }
 
 
@@ -157,15 +170,15 @@ nav img{
 	background: transparent;
 	position: relative;/*Nothing has changed..*/
 	text-decoration: none;
-	color: #fff;
-	border: 1px solid #fff;
+	color: var(--backgroundTextColor);
+	border: 1px solid var(--backgroundTextColor);
 	padding: 12px 34px;
 	font-size: 13px;
 }
 
 .hero-btn:hover{
-	background: #f44336;
-	border: 1px solid #f44336;
+	background: var(--backgroundSmallThingsCollor);
+	border: 1px solid var(--backgroundSmallThingsCollor);
 	transition: 1s;
 }
 
@@ -189,7 +202,7 @@ nav .fa{
 
 	.nav-links{
 		position: absolute;
-		background: #f44336;
+		background: var(--backgroundSmallThingsCollor);
 		height: 100vh;
 		width: 200px;
 		top: 0;
@@ -201,7 +214,7 @@ nav .fa{
 
 	nav .fa{
 		display: block; /* for the sandwich menu that was display none to reappear*/
-		color: #fff;
+		color: var(--backgroundTextColor);
 		margin: 10px;
 		font-size: 22px;
 		cursor: pointer;
@@ -220,7 +233,7 @@ nav .fa{
 .course-col{
 	margin-top: 30px;
 	flex-basis: 31%;/*Dictates the size of the child flex*/
-	background: #fff3f3;
+	background: var(--backgroundColumColor);
 	border-radius: 10px;
 	padding: 20px 12px;
 	box-sizing: border-box; /*Thus, the width will take into account the padding and the border. It will be a width more accurately*/
@@ -272,7 +285,7 @@ nav .fa{
 .layer h3{
 	width: 100%;
 	font-weight: 500;
-	color: #fff;
+	color: var(--backgroundTextColor);
 	font-size: 26px;
 	bottom: 0;
 	left: 50%;
@@ -323,7 +336,7 @@ nav .fa{
 	border-radius: 10px;
 	margin-top: 30px;
 	text-align: left;
-	background: #fff3f3;
+	background: var(--backgroundColumColor);
 	padding: 25px;
 	cursor: pointer;
 	display: flex;/*Because it has image and text... to be side by side, flex already solves it right away*/
@@ -350,7 +363,7 @@ nav .fa{
 }
 
 .testimonial-col .fa{
-	color: #f44336;
+	color: var(--backgroundSmallThingsCollor);
 }
 
 
@@ -383,7 +396,7 @@ nav .fa{
 }
 
 .cta h1{/*h1 was centered but I really don't know why the h1 wasn't glued on top like the beginning.. but instead it was almost in the middle of the image... I don't know why??????*/
-	color: #fff;
+	color: var(--backgroundTextColor);
 	margin-bottom: 40px; /*how far do you want it to be from the button*/
 	padding: 0;
 }
@@ -411,12 +424,12 @@ nav .fa{
 }
 
 .icons .fa{ /*Referencing the fa class that is inside the icons class...*/
-	color: #f44336;
+	color: var(--backgroundSmallThingsCollor);
 	margin: 0 13px; /*for positioning*/
 	cursor: pointer;
 	padding: 18px 0; /*for positioning*/
 }
 
 .fa-heart-o{
-	color: #f44336;
+	color: var(--backgroundSmallThingsCollor);
 }
