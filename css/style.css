@@ -194,42 +194,6 @@ nav .fa{
 
 
 
-@media(max-width: 700px){
-	.text-box h1{
-		font-size: 20px;
-	}
-
-	.nav-links li{
-		display: block; /*menu return to list in responsive*/
-	}
-
-	.nav-links{
-		position: absolute;
-		background: var(--backgroundSmallThingsCollor);
-		height: 100vh;
-		width: 200px;
-		top: 0;
-		right: -200px;
-		text-align: left;		
-		transition: 1s;
-		z-index: 2;/*In this case, without the larger z index, the menu would be behind the content written in the middle of the page, since it was written first.*/
-	}
-
-	nav .fa{
-		display: block; /* for the sandwich menu that was display none to reappear*/
-		margin: 10px;
-		color: var(--backgroundTextColor);
-		font-size: 22px;
-		cursor: pointer;
-	}
-
-	.nav-links ul{
-		padding: 30px;
-	}
-}
-
-
-
 
 
 
@@ -245,12 +209,6 @@ nav .fa{
 
 .course-col:hover{
 	box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);/* shadow-style matte border that appears slowly due to the transition when hovering over it with the mouse*/
-}
-
-@media(max-width: 700px){
-	.row{
-		flex-direction: column;
-	}
 }
 
 
@@ -371,19 +329,6 @@ nav .fa{
 
 
 
-@media(max-width: 700px){
-	.testimonial-col img{	
-		margin-left: 0px;/*Repositioning the image in the responsive*/
-		margin-right: 15px;		
-	}
-
-	#testimonialColum1{
-		margin-right: 0px;
-	}
-}
-
-
-
 
 
 
@@ -404,11 +349,6 @@ nav .fa{
 	color: var(--backgroundTextColor);
 }
 
-@media(max-width: 700px){
-	.cta h1{
-		font-size: 24px;
-	}
-}
 
 
 
@@ -436,3 +376,62 @@ nav .fa{
 .fa-heart-o{
 	color: var(--backgroundSmallThingsCollor);
 }
+
+/*	=============
+	media query
+	=============  */
+	
+@media(max-width: 700px){
+		
+	.row{
+		flex-direction: column;
+	}
+
+	.nav-links li{
+		display: block; /*menu return to list in responsive*/
+	}
+	
+	.nav-links{
+		position: absolute;
+		background: var(--backgroundSmallThingsCollor);
+		height: 100vh;
+		width: 200px;
+		top: 0;
+		right: -200px;
+		text-align: left;		
+		transition: 1s;
+		z-index: 2;/*In this case, without the larger z index, the menu would be behind the content written in the middle of the page, since it was written first.*/
+	}
+	
+	nav .fa{
+		display: block; /* for the sandwich menu that was display none to reappear*/
+		margin: 10px;
+		color: var(--backgroundTextColor);
+		font-size: 22px;
+		cursor: pointer;
+	}
+	
+	.nav-links ul{
+		padding: 30px;
+	}
+
+	.text-box h1{
+		font-size: 20px;
+	}
+
+	.testimonial-col img{	
+		margin-left: 0px;/*Repositioning the image in the responsive*/
+		margin-right: 15px;		
+	}
+
+	#testimonialColum1{
+		margin-right: 0px;
+	}
+
+	.cta h1{
+		font-size: 24px;
+	}
+	
+}
+
+	
