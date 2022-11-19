@@ -22,6 +22,8 @@
 	font-family: 'Poppins', sans-serif;
 }
 
+
+
 /*	=============
 	colors
 	=============  */
@@ -43,18 +45,21 @@ h1{
 }
 
 h3{
+	margin: 10px 0;
 	text-align: center;
 	font-weight: 600;
-	margin: 10px 0;
 }
 
 p{
+	padding: 10px;
+	line-height: 22px; /*vertical distance between two lines of type*/
 	color: var(--textColor);
 	font-size: 14px;
 	font-weight: 300;
-	line-height: 22px; /*vertical distance between two lines of type*/
-	padding: 10px;
+	
 }
+
+
 
 /*	=============
 	layout
@@ -62,9 +67,8 @@ p{
 
 section{
 	width: 80%;
-	margin: auto;
+	margin: 100px auto auto auto; /*The horizontal margin cannot be fixed, so responsiveness can occur*/
 	text-align: center;
-	margin-top: 100px;
 }
 
 .row{
@@ -77,13 +81,13 @@ section{
 	=============  */
 
 .header{
+	position: relative;	/*The element is positioned relative to its normal position, so "left:20px" adds 20 pixels to the element's LEFT position... header relative will be the reference to everything it contains being absolute position*/
 	margin-top: 0px; /*Overriding default margin section*/
 	width: 100%; /*for the image to occupy 100% of the width of the page*/
 	min-height: 100vh; /*Means the element should occupy 100 percent of the web browser's viewport height. If there is more content, the element will stretch more than the viewport's height...*/
 	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../img/banner.png);/*to work the photo with css and gradient*/
 	background-position: center;/*to center the image*/
 	background-size: cover;/*Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges*/
-	position: relative;	/*The element is positioned relative to its normal position, so "left:20px" adds 20 pixels to the element's LEFT position... header relative will be the reference to everything it contains being absolute position*/
 }
 
 
@@ -94,8 +98,8 @@ section{
 nav{
 	display: flex;
 	justify-content: space-between;
-	text-align: center;
 	padding: 2% 6%; 
+	text-align: center;
 } 
 
 
@@ -109,47 +113,46 @@ nav img{
 	text-align: right;
 }
 
-.nav-links ul li{ /*It refers to the li present in the ul that is inside the nav-links*/
-	list-style: none; /*Take the dots off the list*/
+.nav-links li{ /*It refers to the li present in the ul that is inside the nav-links*/
 	display: inline-block; /*Get off the ul list and get side by side*/	
-	padding: 8px 12px;
 	position: relative;
+	padding: 8px 12px;
+	list-style: none; /*Take the dots off the list*/
 }
 
-.nav-links ul li a{
+.nav-links a{
 	color: var(--backgroundTextColor);
-	text-decoration: none; /*remove underline from link*/
 	font-size: 13px;
+	text-decoration: none; /*remove underline from link*/
 }
 
 
 
-.nav-links ul li::after{ /*Edit the content after it is created... It's an option to style without having to create a div just to give the specific style*/
-	content: ''; /*For the Pseudo Element to be created*/
+.nav-links li::after{ /*Edit the content after it is created... It's an option to style without having to create a div just to give the specific style*/
+	display: block;
+	margin: auto;
 	width: 0%;
 	height: 2px;
 	background: var(--backgroundSmallThingsCollor);
-	display: block;
-	margin: auto;
+	content: ''; /*For the Pseudo Element to be created*/
 	transition: 0.5s;
 	/*Generates runtime effects*/
 }
 
-.nav-links ul li:hover::after{/*I believe that without this after, the hover would apply its effect without the after of the code above being applied...*/
+.nav-links li:hover::after{/*I believe that without this after, the hover would apply its effect without the after of the code above being applied...*/
 	width: 100%;
 }
 
 
 
 .text-box{
-	width: 90%; /*Div width in relation to screen*/
-	color: var(--backgroundTextColor);
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	width: 90%; /*Div width in relation to screen*/
+	color: var(--backgroundTextColor);
 	text-align: center;
 	transform: translate(-50%,-50%);/*I believe it is a trick of centralization using absolute position with transform translate.. because without transform the values would be top 32% left 5%... There are those who say that using flex box could be cleaner*/
-	
 }
 
 .text-box h1{
@@ -165,15 +168,15 @@ nav img{
 
 
 .hero-btn{
-	cursor: pointer;
 	display: inline-block; /*?*/
-	background: transparent;
 	position: relative;/*Nothing has changed..*/
-	text-decoration: none;
+	padding: 12px 34px;
+	background: transparent;
+	font-size: 13px;
 	color: var(--backgroundTextColor);
 	border: 1px solid var(--backgroundTextColor);
-	padding: 12px 34px;
-	font-size: 13px;
+	cursor: pointer;
+	text-decoration: none;
 }
 
 .hero-btn:hover{
@@ -196,7 +199,7 @@ nav .fa{
 		font-size: 20px;
 	}
 
-	.nav-links ul li{
+	.nav-links li{
 		display: block; /*menu return to list in responsive*/
 	}
 
@@ -214,8 +217,8 @@ nav .fa{
 
 	nav .fa{
 		display: block; /* for the sandwich menu that was display none to reappear*/
-		color: var(--backgroundTextColor);
 		margin: 10px;
+		color: var(--backgroundTextColor);
 		font-size: 22px;
 		cursor: pointer;
 	}
@@ -231,12 +234,12 @@ nav .fa{
 
 
 .course-col{
-	margin-top: 30px;
 	flex-basis: 31%;/*Dictates the size of the child flex*/
-	background: var(--backgroundColumColor);
-	border-radius: 10px;
+	margin-top: 30px;
 	padding: 20px 12px;
 	box-sizing: border-box; /*Thus, the width will take into account the padding and the border. It will be a width more accurately*/
+	background: var(--backgroundColumColor);
+	border-radius: 10px;
 	transition: 0.5s;/* If you only set the time, it sets the time for the transition to occur... which in this case is the course-hover shadow box */
 }
 
@@ -257,24 +260,24 @@ nav .fa{
 
 .campus-col{
 	flex-basis: 32%;	
-	border-radius: 10px;
 	margin-top: 30px;
 	position: relative;
 	overflow: hidden;/*whatever is inside the campus-col will be hidde by the edge. there will be no overflow...*/
+	border-radius: 10px;
 }
 
 .campus-col img{
-	width: 100%;/*is what forces the image to respect the width of the child flex and adjusts the height of the image together to maintain the image's proportions*/
 	display: block;/*influenced only by the lower rounded edges...*/
+	width: 100%;/*is what forces the image to respect the width of the child flex and adjusts the height of the image together to maintain the image's proportions*/
 }
 
 .layer{/*All this to position the div that contains the h3 centered and at the bottom of the image.*/
-	background: transparent;
-	height: 100%;
-	width: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
+	background: transparent;
+	height: 100%;
+	width: 100%;
 	transition: 0.5s;
 }
 
@@ -283,14 +286,14 @@ nav .fa{
 }
 
 .layer h3{
-	width: 100%;
-	font-weight: 500;
-	color: var(--backgroundTextColor);
-	font-size: 26px;
+	position: absolute;
 	bottom: 0;
 	left: 50%;
+	width: 100%;
+	font-size: 26px;
+	font-weight: 500;
+	color: var(--backgroundTextColor);
 	transform: translateX(-50%);/*To help leave the word below... and receive the necessary location to go up through the hover*/
-	position: absolute;
 	opacity: 0;/*To hide the word... as it is already on the magnet invisibly... it will appear on the hover with opacity 1*/
 	transition: 0.5s;
 }
@@ -306,8 +309,8 @@ nav .fa{
 
 
 .facilities-col{
-	margin-top: 30px;
 	flex-basis: 31%;
+	margin-top: 30px;
 	text-align: left; /*Without it, txt gets misaligned*/
 	border-radius: 10px;/*?*/
 }
@@ -332,14 +335,14 @@ nav .fa{
 
 
 .testimonial-col{
-	flex-basis: 44%;
-	border-radius: 10px;
-	margin-top: 30px;
-	text-align: left;
-	background: var(--backgroundColumColor);
-	padding: 25px;
-	cursor: pointer;
 	display: flex;/*Because it has image and text... to be side by side, flex already solves it right away*/
+	flex-basis: 44%;
+	margin-top: 30px;
+	padding: 25px;
+	background: var(--backgroundColumColor);
+	text-align: left;
+	cursor: pointer;
+	border-radius: 10px;
 }
 
 .testimonial-col img{
@@ -386,19 +389,19 @@ nav .fa{
 
 .cta{
 	margin-top: 125px;
+	padding: 100px 0; /* Dictates how much of the image you want to appear*/
 	width: 80%;
 	background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../img/banner2.jpg);
 	background-position: center;
 	background-size: cover;
 	border-radius: 10px;
 	text-align: center;
-	padding: 100px 0; /* Dictates how much of the image you want to appear*/
 }
 
 .cta h1{/*h1 was centered but I really don't know why the h1 wasn't glued on top like the beginning.. but instead it was almost in the middle of the image... I don't know why??????*/
-	color: var(--backgroundTextColor);
 	margin-bottom: 40px; /*how far do you want it to be from the button*/
 	padding: 0;
+	color: var(--backgroundTextColor);
 }
 
 @media(max-width: 700px){
@@ -412,9 +415,9 @@ nav .fa{
 
 
 .footer{
+	margin-top: 115px;
 	width: 100%;
 	text-align: center;
-	margin-top: 115px;
 }
 
 .footer h4{
@@ -424,10 +427,10 @@ nav .fa{
 }
 
 .icons .fa{ /*Referencing the fa class that is inside the icons class...*/
-	color: var(--backgroundSmallThingsCollor);
 	margin: 0 13px; /*for positioning*/
-	cursor: pointer;
 	padding: 18px 0; /*for positioning*/
+	color: var(--backgroundSmallThingsCollor);
+	cursor: pointer;
 }
 
 .fa-heart-o{
