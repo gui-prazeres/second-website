@@ -53,22 +53,26 @@
 	--backgroundColumColor: #fff3f3;
 }
 
-h1{
-	font-size: 36px;
+.text-box h1{
+	font-size: clamp(2rem, 1rem + 5.5vw, 4rem)
+}
+
+h2{
+	font-size: 2rem;
 	font-weight: 600;
 }
 
 h3{
-	margin: 10px 0;
+	margin: 1% 0;
 	text-align: center;
 	font-weight: 600;
 }
 
 p{
-	padding: 10px;
-	line-height: 22px; /*vertical distance between two lines of type*/
+	padding: 2%;
+	line-height: 175%; 
 	color: var(--textColor);
-	font-size: 14px;
+	font-size: 0.9rem;
 	font-weight: 300;
 }
 
@@ -80,7 +84,7 @@ p{
 
 section{
 	width: 80%;
-	margin: 100px auto auto auto; /*The horizontal margin cannot be fixed, so responsiveness can occur*/
+	margin: 10% auto auto auto; 
 	text-align: center;
 }
 
@@ -92,13 +96,13 @@ section{
 /*	===== header */
 
 .header{
-	position: relative;	/*The element is positioned relative to its normal position, so "left:20px" adds 20 pixels to the element's LEFT position... header relative will be the reference to everything it contains being absolute position*/
-	margin-top: 0px; /*Overriding default margin section*/
-	width: 100%; /*for the image to occupy 100% of the width of the page*/
-	min-height: 100vh; /*Means the element should occupy 100 percent of the web browser's viewport height. If there is more content, the element will stretch more than the viewport's height...*/
-	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../img/banner.png);/*to work the photo with css and gradient*/
-	background-position: center;/*to center the image*/
-	background-size: cover;/*Resize the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges*/
+	position: relative;	
+	margin-top: 0px; 
+	width: 100%; 
+	min-height: 100vh; 
+	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../img/banner.png);
+	background-position: center;
+	background-size: cover;
 }
 
 /*	===== menu */
@@ -111,37 +115,36 @@ nav{
 } 
 
 nav img{ 
-	width: 150px; /*Manipulate the image following its proportions*/
+	width: 150px; 
 }
 
-.nav-links{/*It's a div containing the nav-links name. Remember that tag is not required*/
-	flex: 1; /* will be the exact size of the content inside it */
+.nav-links{
+	flex: 1; 
 	text-align: right;
 }
 
-.nav-links li{ /*It refers to the li present in the ul that is inside the nav-links*/
-	display: inline-block; /*Get off the ul list and get side by side*/	
+.nav-links li{ 
+	display: inline-block; 
 	position: relative;
 	padding: 8px 12px;
-	list-style: none; /*Take the dots off the list*/
+	list-style: none; 
 }
 
 .nav-links a{
 	color: var(--backgroundTextColor);
-	font-size: 13px;
-	text-decoration: none; /*remove underline from link*/
+	font-size: 0.9rem;
+	text-decoration: none; 
 }
 
-/* The responsive media below needs to be positioned after the initial code is written... the order in the css matters.*/
 nav .fa{
-	display: none; /*You don't want the sandwich bars on the big screen pc menu...*/
+	display: none;
 }
 
 /*	===== cta */
 
 .cta{
-	margin-top: 125px;
-	padding: 100px 0; /* Dictates how much of the image you want to appear*/
+	margin-top: 15%;
+	padding: 10% 0; 
 	width: 80%;
 	background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../img/banner2.jpg);
 	background-position: center;
@@ -150,8 +153,8 @@ nav .fa{
 	text-align: center;
 }
 
-.cta h1{/*h1 was centered but I really don't know why the h1 wasn't glued on top like the beginning.. but instead it was almost in the middle of the image... I don't know why??????*/
-	margin-bottom: 40px; /*how far do you want it to be from the button*/
+.cta h2{
+	margin-bottom: 7%; 
 	padding: 0;
 	color: var(--backgroundTextColor);
 }
@@ -159,7 +162,7 @@ nav .fa{
 /*	===== footer */
 
 .footer{
-	margin-top: 115px;
+	margin-top: 15%;
 	width: 100%;
 	text-align: center;
 }
@@ -168,6 +171,119 @@ nav .fa{
 	margin-bottom: 25px;
 	margin-top: 20px;
 	font-weight: 600;
+}
+
+/*	=============
+	section content
+	=============  */
+
+/*	===== header */
+
+.text-box{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 90%; 
+	color: var(--backgroundTextColor);
+	text-align: center;
+	transform: translate(-50%,-50%);
+}
+
+.text-box p{
+	margin: 10px 0 40px;
+	color: var(--backgroundTextColor);
+	font-size: clamp(0.9rem, 0.9rem + 0.1vw, 1rem)
+}
+
+/*	===== course */
+
+.course-col{
+	flex-basis: 31%;
+	margin-top: 30px;
+	padding: 20px 12px;
+	box-sizing: border-box; 
+	background: var(--backgroundColumColor);
+	border-radius: 10px;
+	transition: 0.5s;
+}
+
+.course-col:hover{
+	box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+/*	===== campus */
+
+.campus-col{
+	flex-basis: 32%;	
+	margin-top: 30px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.campus-col img{
+	display: block;
+	width: 100%;
+}
+
+/*	===== facilities */
+
+.facilities-col{
+	flex-basis: 31%;
+	margin-top: 30px;
+	text-align: left; 
+	border-radius: 10px;/*?*/
+}
+
+.facilities-col img{
+	width: 100%;
+	border-radius: 10px;
+}
+
+.facilities-col p{
+	padding: 0;
+}
+
+.facilities-col h3{
+	margin: 0 auto;
+	text-align: left;
+}
+
+/*	===== testimonial */
+
+.testimonial-col{
+	display: flex;
+	flex-basis: 44%;
+	margin-top: 30px;
+	padding: 25px;
+	background: var(--backgroundColumColor);
+	text-align: left;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.testimonial-col img{
+	height: 40px;
+	margin-left: 5px;
+	margin-right: 30px;
+	border-radius: 50%;
+}
+
+#testimonialColum1{
+	margin-right: 15px;
+}
+
+.testimonial-col p{
+	padding: 0;
+}
+
+.testimonial-col h3{
+	margin-top: 15px;
+	text-align: left;
+}
+
+.testimonial-col .fa{
+	color: var(--backgroundSmallThingsCollor);
 }
 
 /*	=============
@@ -192,18 +308,17 @@ nav .fa{
 
 /*	menu links effects */
 
-.nav-links li::after{ /*Edit the content after it is created... It's an option to style without having to create a div just to give the specific style*/
+.nav-links li::after{ 
 	display: block;
 	margin: auto;
 	width: 0%;
 	height: 2px;
 	background: var(--backgroundSmallThingsCollor);
-	content: ''; /*For the Pseudo Element to be created*/
+	content: ''; 
 	transition: 0.5s;
-	/*Generates runtime effects*/
 }
 
-.nav-links li:hover::after{/*I believe that without this after, the hover would apply its effect without the after of the code above being applied...*/
+.nav-links li:hover::after{
 	width: 100%;
 }
 
@@ -217,7 +332,7 @@ nav .fa{
 
 /*	===== layer */
 
-.layer{/*All this to position the div that contains the h3 centered and at the bottom of the image.*/
+.layer{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -239,8 +354,8 @@ nav .fa{
 	font-size: 26px;
 	font-weight: 500;
 	color: var(--backgroundTextColor);
-	transform: translateX(-50%);/*To help leave the word below... and receive the necessary location to go up through the hover*/
-	opacity: 0;/*To hide the word... as it is already on the magnet invisibly... it will appear on the hover with opacity 1*/
+	transform: translateX(-50%);
+	opacity: 0;
 	transition: 0.5s;
 }
 
@@ -252,9 +367,9 @@ nav .fa{
 
 /*	===== icons */	
 
-.icons .fa{ /*Referencing the fa class that is inside the icons class...*/
-	margin: 0 13px; /*for positioning*/
-	padding: 18px 0; /*for positioning*/
+.icons .fa{ 
+	margin: 0 13px; 
+	padding: 18px 0; 
 	color: var(--backgroundSmallThingsCollor);
 	cursor: pointer;
 }
@@ -262,125 +377,6 @@ nav .fa{
 .fa-heart-o{
 	color: var(--backgroundSmallThingsCollor);
 }
-
-
-/*	=============
-	section content
-	=============  */
-
-/*	===== header */
-
-.text-box{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 90%; /*Div width in relation to screen*/
-	color: var(--backgroundTextColor);
-	text-align: center;
-	transform: translate(-50%,-50%);/*I believe it is a trick of centralization using absolute position with transform translate.. because without transform the values would be top 32% left 5%... There are those who say that using flex box could be cleaner*/
-}
-
-.text-box h1{
-	font-size: 62px;
-}
-
-.text-box p{
-	margin: 10px 0 40px;/*move a little away from the h1 and more from the button*/
-	font-size: 14px;
-	color: var(--backgroundTextColor);
-}
-
-/*	===== course */
-
-.course-col{
-	flex-basis: 31%;/*Dictates the size of the child flex*/
-	margin-top: 30px;
-	padding: 20px 12px;
-	box-sizing: border-box; /*Thus, the width will take into account the padding and the border. It will be a width more accurately*/
-	background: var(--backgroundColumColor);
-	border-radius: 10px;
-	transition: 0.5s;/* If you only set the time, it sets the time for the transition to occur... which in this case is the course-hover shadow box */
-}
-
-.course-col:hover{
-	box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);/* shadow-style matte border that appears slowly due to the transition when hovering over it with the mouse*/
-}
-
-/*	===== campus */
-
-.campus-col{
-	flex-basis: 32%;	
-	margin-top: 30px;
-	position: relative;
-	overflow: hidden;/*whatever is inside the campus-col will be hidde by the edge. there will be no overflow...*/
-	border-radius: 10px;
-}
-
-.campus-col img{
-	display: block;/*influenced only by the lower rounded edges...*/
-	width: 100%;/*is what forces the image to respect the width of the child flex and adjusts the height of the image together to maintain the image's proportions*/
-}
-
-/*	===== facilities */
-
-.facilities-col{
-	flex-basis: 31%;
-	margin-top: 30px;
-	text-align: left; /*Without it, txt gets misaligned*/
-	border-radius: 10px;/*?*/
-}
-
-.facilities-col img{
-	width: 100%;
-	border-radius: 10px;
-}
-
-.facilities-col p{
-	padding: 0;/*annulled the already predetermined global padding.. aesthetic change*/
-}
-
-.facilities-col h3{
-	margin: 0 auto;
-	text-align: left;
-}
-
-/*	===== testimonial */
-
-.testimonial-col{
-	display: flex;/*Because it has image and text... to be side by side, flex already solves it right away*/
-	flex-basis: 44%;
-	margin-top: 30px;
-	padding: 25px;
-	background: var(--backgroundColumColor);
-	text-align: left;
-	cursor: pointer;
-	border-radius: 10px;
-}
-
-.testimonial-col img{
-	height: 40px;
-	margin-left: 5px;
-	margin-right: 30px;
-	border-radius: 50%;/*round profile picture*/
-}
-
-#testimonialColum1{
-	margin-right: 15px;
-}
-
-.testimonial-col p{
-	padding: 0;
-}
-
-.testimonial-col h3{
-	margin-top: 15px;
-	text-align: left;
-}
-
-.testimonial-col .fa{
-	color: var(--backgroundSmallThingsCollor);
-}
-
 
 /*	=============
 	media query
@@ -392,8 +388,10 @@ nav .fa{
 		flex-direction: column;
 	}
 
+/*	===== menu query */
+
 	.nav-links li{
-		display: block; /*menu return to list in responsive*/
+		display: block; 
 	}
 	
 	.nav-links{
@@ -405,11 +403,11 @@ nav .fa{
 		right: -200px;
 		text-align: left;		
 		transition: 1s;
-		z-index: 2;/*In this case, without the larger z index, the menu would be behind the content written in the middle of the page, since it was written first.*/
+		z-index: 2;
 	}
 	
 	nav .fa{
-		display: block; /* for the sandwich menu that was display none to reappear*/
+		display: block;
 		margin: 10px;
 		color: var(--backgroundTextColor);
 		font-size: 22px;
@@ -420,12 +418,10 @@ nav .fa{
 		padding: 30px;
 	}
 
-	.text-box h1{
-		font-size: 20px;
-	}
+/*Repositioning the image in the responsive*/
 
 	.testimonial-col img{	
-		margin-left: 0px;/*Repositioning the image in the responsive*/
+		margin-left: 0px;
 		margin-right: 15px;		
 	}
 
@@ -433,7 +429,7 @@ nav .fa{
 		margin-right: 0px;
 	}
 
-	.cta h1{
+	.cta h2{
 		font-size: 24px;
 	}
 	
