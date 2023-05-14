@@ -1,13 +1,20 @@
                    HTML
 
 Questões Responsivas
+
 Lembre-se de textar o codigo na versão reduzida, pois ele pode atuar apenas nesse caso...
 
+
+
 Afastamento e Simetria visual
+
 Tenha boa organização/padrão de codigo e assim gerenciar bem os espaços e simetrias na pagina 
+
 Tirar uma propriedade no css levará a uma atribuição em herança do pai. Lembre-se disso
+
 Padding ou margin para afastamento? 
 Margin... Pois padding quando a estrutura contem background img afeta o afastamento só que dentro da propria imagem.
+
 Ilusão de otica
 letras gerarão efeito visual de distancia diferente de uma imagem
 
