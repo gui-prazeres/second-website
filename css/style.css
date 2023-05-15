@@ -12,19 +12,16 @@
 	header background
 	menu
 	header text
-	course
-	campus
-	facilities
-	testimonial
 	cta
 	footer
 
 - components
 	buttons
-	links effects
-		menu 
-		button 
-	layer
+	menu 
+	post it
+	photo with layer
+	stabdard photo
+	evaluation note
 	icons
 
 - media query
@@ -60,20 +57,15 @@
 /*	===== containers */
 
 
-.theme{
+.theme-spacing{
 	width: 80%;
 	margin: 10% auto auto auto; 
 	text-align: center;
 }
 
-.theme__row-itens{
+.item-line{
 	display: flex;
 	justify-content: space-between;
-}
-
-.theme__colum-itens{
-	flex-basis: 31%;
-	margin-top: 4%;
 }
 
 
@@ -90,7 +82,7 @@
 	font-weight: 600;
 }
 
-.theme__colum-itens__title{
+.item-line__item-title{
 	margin: 10px 0;
 	font-size: 1.4rem;
 	text-align: center;
@@ -193,99 +185,6 @@ nav .fa{
 }
 
 
-/*	===== course */
-
-
-.theme__colum-itens--course{
-	padding: 20px 12px;
-	box-sizing: border-box; 
-	background: var(--backgroundColumColor);
-	border-radius: 10px;
-	transition: 0.5s;
-}
-
-.theme__colum-itens--course:hover{
-	box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
-}
-
-
-/*	===== campus */
-
-
-.theme__colum-itens--campus{
-	position: relative;
-	overflow: hidden;
-	border-radius: 10px;
-}
-
-.theme__colum-itens--campus img{
-	display: block;
-	width: 100%;
-}
-
-
-/*	===== facilities */
-
-
-.theme__colum-itens--facilities{
-	text-align: left; 
-	border-radius: 10px;
-}
-
-.theme__colum-itens--facilities img{
-	width: 100%;
-	border-radius: 10px;
-}
-
-.theme__colum-itens--facilities p{
-	padding: 0;
-}
-
-.theme__colum-itens--facilities .theme__colum-itens__title{
-	margin: 0 auto;
-	text-align: left;
-}
-
-
-/*	===== testimonial */
-
-
-.testimonial-col{
-	display: flex;
-	flex-basis: 44%;
-	margin-top: 4%;
-	padding: 25px;
-	background: var(--backgroundColumColor);
-	text-align: left;
-	cursor: pointer;
-	border-radius: 10px;
-}
-
-.testimonial-col img{
-	height: 40px;
-	margin-left: 5px;
-	margin-right: 30px;
-	border-radius: 50%;
-}
-
-#testimonialColum1{
-	margin-right: 15px;
-}
-
-.testimonial-col p{
-	padding: 0;
-}
-
-.testimonial-col .theme__colum-itens__title{
-	margin-top: 15px;
-	text-align: left;
-}
-
-.testimonial-col .fa{
-	color: var(--backgroundSmallThingsCollor);
-}
-
-
 /*	===== cta */
 
 
@@ -337,8 +236,11 @@ nav .fa{
 	text-decoration: none;
 }
 
-
-/*	===== links effects */
+.hero-btn:hover{
+	background: var(--backgroundSmallThingsCollor);
+	border: 1px solid var(--backgroundSmallThingsCollor);
+	transition: 1s;
+}
 
 
 /*	menu  */
@@ -359,20 +261,42 @@ nav .fa{
 }
 
 
-/*	button  */
+/*	===== post it ==course */
 
 
-.hero-btn:hover{
-	background: var(--backgroundSmallThingsCollor);
-	border: 1px solid var(--backgroundSmallThingsCollor);
-	transition: 1s;
+.item-line__course-post-it{
+	flex-basis: 31%;
+	margin-top: 4%;
+	padding: 20px 12px;
+	box-sizing: border-box; 
+	background: var(--backgroundColumColor);
+	border-radius: 10px;
+	transition: 0.5s;
+}
+
+.item-line__course-post-it:hover{
+	box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
 }
 
 
-/*	===== layer */
+/*	===== photo-with-layer ==campus */
 
 
-.campus-img-layer{
+.item-line__photo-with-layer{
+	flex-basis: 31%;
+	position: relative;
+	overflow: hidden;
+	margin-top: 4%;	
+	border-radius: 10px;
+}
+
+.item-line__photo-with-layer img{
+	display: block;
+	width: 100%;
+}
+
+
+.layer-application{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -382,11 +306,11 @@ nav .fa{
 	transition: 0.5s;
 }
 
-.campus-img-layer:hover{
+.layer-application:hover{
 	background: rgba(226,0,0,0.7);
 }
 
-.campus-img-layer .layer-title{
+.layer-application .layer-title{
 	position: absolute;
 	bottom: 0;
 	left: 50%;
@@ -399,9 +323,73 @@ nav .fa{
 	transition: 0.5s;
 }
 
-.campus-img-layer:hover .layer-title{
+.layer-application:hover .layer-title{
 	bottom: 49%;
 	opacity: 1;
+}
+
+
+/*	===== standard photo ==facilities */
+
+
+.item-line__standard-photo{
+	flex-basis: 31%;
+	margin-top: 4%;
+	text-align: left; 
+	border-radius: 10px;
+}
+
+.item-line__standard-photo img{
+	width: 100%;
+	border-radius: 10px;
+}
+
+.item-line__standard-photo p{
+	padding: 0;
+}
+
+.item-line__standard-photo .item-line__item-title{
+	margin: 0 auto;
+	text-align: left;
+}
+
+
+/*	===== evaluation note ==testimonial */
+
+
+.item-line__evaluation-note{
+	display: flex;
+	flex-basis: 44%;
+	margin-top: 4%;
+	padding: 25px;/*joins the scraps in narrow canvases*/
+	background: var(--backgroundColumColor);
+	text-align: left;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.item-line__evaluation-note img{
+	height: 40px;
+	margin-left: 5px;
+	margin-right: 30px;
+	border-radius: 50%;
+}
+
+#space-between-messages{ /*separates the scraps in narrow screens*/
+	margin-right: 15px;
+}
+
+.item-line__evaluation-note p{
+	padding: 0;
+}
+
+.item-line__evaluation-note .item-line__item-title{
+	margin-top: 15px;
+	text-align: left;
+}
+
+.item-line__evaluation-note .fa{
+	color: var(--backgroundSmallThingsCollor);
 }
 
 
@@ -438,7 +426,7 @@ nav .fa{
 			font-size: 1.4rem;
 		}
 
-		.theme__colum-itens__title{
+		.item-line__item-title{
 			font-size: 1.2rem;
 		}
 
@@ -451,11 +439,11 @@ nav .fa{
 			font-size: 0.9rem;
 		}
 
-		.theme{
+		.theme-spacing{
 			margin-top: 70px;	
 		}
 
-		.theme__row-itens{
+		.item-line{
 			flex-direction: column;
 		}
 	
@@ -491,12 +479,12 @@ nav .fa{
 			font-size: 0.8rem;
 		}
 		
-		.testimonial-col img{	
+		.item-line__evaluation-note img{	
 			margin-left: 0px;
 			margin-right: 15px;		
 		}
 	
-		#testimonialColum1{
+		#space-between-messages{
 			margin-right: 0px;
 		}
 
