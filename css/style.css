@@ -22,9 +22,13 @@
 	photo with layer ==campus
 	stabdard photo ==facilities
 	evaluation note ==testimonial
+	presentation and photo ==about us
 		icons
 
 - media query
+
+
+
 
 */
 
@@ -77,6 +81,10 @@
 	margin: 2.5rem auto;
 }
 
+.sub-header-title{
+	margin-top: 7rem;
+}
+
 .theme-title{
 	font-size: 2rem;
 	font-weight: 600;
@@ -127,6 +135,15 @@ p{
 	background-size: cover;
 }
 
+.sub-header{
+	width: 100%; 
+	height: 50vh; 
+	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../img/background.jpg);
+	background-position: center;
+	background-size: cover;
+	text-align: center;
+	color: var(--backgroundTextColor);
+}
 
 /*	===== menu */
 
@@ -243,6 +260,16 @@ nav .fa{
 }
 
 
+.hero-btn--red{
+	border: 1px solid var(--backgroundSmallThingsCollor);
+	background: transparent;
+	color: var(--backgroundSmallThingsCollor);
+}
+
+.hero-btn--red:hover{
+	color: var(--backgroundTextColor);
+}
+
 /*	menu  */
 
 
@@ -310,7 +337,7 @@ nav .fa{
 	background: rgba(226,0,0,0.7);
 }
 
-.layer-application .layer-title{
+.layer-title{
 	position: absolute;
 	bottom: 0;
 	left: 50%;
@@ -392,6 +419,25 @@ nav .fa{
 	color: var(--backgroundSmallThingsCollor);
 }
 
+/*	===== presentation and photo ==about us */
+
+.item-line__presentation-and-photo{
+	flex-basis: 48%;
+	padding: 30px 2px;
+	text-align: left;
+}
+
+.item-line__presentation-and-photo img{
+	width: 100%;
+}
+
+.item-line__presentation-and-photo h1{
+	padding-top: 0;
+}
+
+.item-line__presentation-and-photo p{
+	padding: 15px 0 25px;
+}
 
 /*	===== icons */	
 
@@ -415,92 +461,94 @@ nav .fa{
 	
 
 
-	@media(max-width: 700px){
-		
-		.header-title{
-			font-size: 1.5rem;
-			margin: 0.8rem auto;
-		}
+@media(max-width: 700px){
 
-		.theme-title{
-			font-size: 1.4rem;
-		}
-
-		.item-line__item-title{
-			font-size: 1.2rem;
-		}
-
-		.footer-title{
-			font-size: 1rem;
-		}
-
-		p{
-			line-height: 130%; 
-			font-size: 0.9rem;
-		}
-
-		.theme-spacing{
-			margin-top: 70px;	
-		}
-
-		.item-line{
-			flex-direction: column;
-		}
-	
-		.nav-links li{
-			display: block;
-		}
-		
-		.nav-links{
-			position: absolute;
-			background: var(--backgroundSmallThingsCollor);
-			height: 100vh;
-			width: 200px;
-			top: 0;
-			right: -200px;
-			text-align: left;		
-			transition: 1s;
-			z-index: 2;
-		}
-		
-		nav .fa{
-			display: block; 
-			margin: 10px;
-			color: var(--backgroundTextColor);
-			font-size: 1.5rem;
-			cursor: pointer;
-		}
-		
-		.nav-links ul{
-			padding: 30px;
-		}
-		
-		.header-text-box p{
-			font-size: 0.8rem;
-		}
-		
-		.item-line__evaluation-note img{	
-			margin-left: 0px;
-			margin-right: 15px;		
-		}
-	
-		#space-between-messages{
-			margin-right: 0px;
-		}
-
-		.cta{
-			margin-top: 80px;
-		}
-
-		.cta-title{
-			font-size: 0.9rem;
-		}
-		
-		.hero-btn{
-			padding: 7px 28px;
-			font-size: 0.6rem;
-		}
-
+	.header-title{
+		font-size: 1.5rem;
+		margin: 0.8rem auto;
 	}
 
+	.theme-title{
+		font-size: 1.4rem;
+	}
+
+	.item-line__item-title{
+		font-size: 1.2rem;
+	}
+
+	.footer-title{
+		font-size: 1rem;
+	}
+
+	p{
+		line-height: 130%; 
+		font-size: 0.9rem;
+	}
+
+	.theme-spacing{
+		margin-top: 70px;	
+	}
+
+	.item-line{
+		flex-direction: column;
+	}
+
+	.nav-links li{
+		display: block;
+	}
 	
+	.nav-links{
+		position: absolute;
+		background: var(--backgroundSmallThingsCollor);
+		height: 100vh;
+		width: 200px;
+		top: 0;
+		right: -200px;
+		text-align: left;		
+		transition: 1s;
+		z-index: 2;
+	}
+	
+	nav .fa{
+		display: block; 
+		margin: 10px;
+		color: var(--backgroundTextColor);
+		font-size: 1.5rem;
+		cursor: pointer;
+	}
+	
+	.nav-links ul{
+		padding: 30px;
+	}
+	
+	.header-text-box p{
+		font-size: 0.8rem;
+	}
+	
+	.item-line__evaluation-note img{	
+		margin-left: 0px;
+		margin-right: 15px;		
+	}
+
+	#space-between-messages{
+		margin-right: 0px;
+	}
+
+	.cta{
+		margin-top: 80px;
+	}
+
+	.cta-title{
+		font-size: 0.9rem;
+	}
+	
+	.hero-btn{
+		padding: 7px 28px;
+		font-size: 0.6rem;
+	}
+
+	.sub-header-title{
+		margin-top: 4rem;
+	}
+
+}

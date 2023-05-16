@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt">
+
+<html>
 <head>
 	
     <meta name="viewport" content="with=device-width, initial-scale=1.0"> 
 	
-    <title>About Us</title>
+    <title>Eduford</title>
 	
     <link rel="stylesheet" href="css/style.css">
 	
@@ -21,45 +22,86 @@
     
     
     
-<section class="header"> 
+<section class="sub-header"> 
     
 	<nav> 
+    <a href="index.html"><img class="nav-img-logo"src="img/logo.png" alt=""></a>
 
-        <a href="index.html"><img src="img/logo.png" alt=""></a>
-		
-        <div class="nav-links" id="navLinks">
-			
-            <i class="fa fa-times" onclick="hideMenu()"></i>
-    
-            <ul>
-				<li><a href="">HOME</a></li>
-				<li><a href="">ABOUT</a></li>
-				<li><a href="">COURSE</a></li>
-				<li><a href="">BLOG</a></li>
-				<li><a href="">CONTACT</a></li>
-            </ul>
-            
-		</div>
+    <div class="nav-links" id="navLinks">
+
+      <i class="fa fa-times" onclick="hideMenu()"></i>
+
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+				<li><a href="about.html">ABOUT</a></li>
+        <li><a href="">COURSE</a></li>
+        <li><a href="">BLOG</a></li>
+        <li><a href="">CONTACT</a></li>
+      </ul>  
+    </div>
+        
+		<i class="fa fa-bars" onclick="showMenu()"></i> 
 	
     </nav>
 	
-    <div class="text-box">
+    <div class="">
         
-		<h1>About Us</h1> 
+		  <h1 class="sub-header-title">About Us</h1>
 	
     </div>
     
 </section>
 
 
+<!------ about us content ------>
+  
+<section class="theme-spacing">
+  <div class="item-line">
+    <div class="item-line__presentation-and-photo">
+      <h1> We are the world's largest University</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi possimus asperiores minima, harum quae dignissimos iusto illo, magni atque voluptas inventore quidem consequuntur dolorum. Quam similique quos doloribus ad veniam!</p>
+      <a href="" class="hero-btn hero-btn--red">Explore Now</a>
+    </div>
+    <div class="item-line__presentation-and-photo">
+      <img src="../img/about.jpg" alt="">
+    </div>
+  </div>
+</section>
 
 
+<section class="footer">
+	
+  <h4 class="footer-title">About Us</h4>
+  <p>Lorem ipsum dolor dit amet, consectetur adipiscing elit, Lorem ipsum dolor dit amet, consectetur adipiscing elit, Lorem ipsum dolor dit amet, consectetur adipiscing eli</p>
 
+    <div class="icons">
 
+    <i class="fa fa-facebook"></i>
+    <i class="fa fa-twitter"></i>
+    <i class="fa fa-instagram"></i>
+    <i class="fa fa-linkedin"></i>
+
+    </div>
+
+  <p>Made with <i class="fa fa-heart-o"></i> by Guilherme Prazeres</p>
+
+</section>
+  
+  
+<!------ JavaScript for Toggle Menu ------>
+
+<script>
+  
+  var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+    navLinks.style.right = "0";		
+  }
+
+    function hideMenu(){
+    navLinks.style.right = "-200px";
+  }
+  
+</script>
 </body>
 </html>
-
-
-<!DOCTYPE html>
-
-<html>
