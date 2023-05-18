@@ -23,7 +23,11 @@
 	stabdard photo ==facilities
 	evaluation note ==testimonial
 	presentation and photo ==about us
-		icons
+	left blog content ==blog
+	right blog table ==blog
+	form ==blog
+	information bloc ==contact
+	icons
 
 - media query
 
@@ -55,6 +59,10 @@
 	--backgroundTextColor: #fff;
 	--backgroundSmallThingsCollor: #f44336;
 	--backgroundColumColor: #fff3f3;
+	--blogContentColor: #999;
+	--blogTableContent: #555;
+	--commentBorder: #ccc;
+	--backgroundAnnotationForm: #f0f0f0;
 }
 
 
@@ -67,6 +75,10 @@
 	text-align: center;
 }
 
+.theme-spacing__contact-map{
+	width: 100%;
+}
+
 .item-line{
 	display: flex;
 	justify-content: space-between;
@@ -77,12 +89,13 @@
 
 
 .header-title{
-	font-size: 4rem;
 	margin: 2.5rem auto;
+	font-size: 4rem;
 }
 
 .sub-header-title{
 	margin-top: 7rem;
+	font-size: 2rem;
 }
 
 .theme-title{
@@ -90,10 +103,10 @@
 	font-weight: 600;
 }
 
-.item-line__item-title{
+.item-line__title{
 	margin: 10px 0;
-	font-size: 1.4rem;
 	text-align: center;
+	font-size: 1.4rem;
 	font-weight: 600;
 }
 
@@ -107,9 +120,9 @@
 p{
 	padding: 10px;
 	line-height: 175%; 
-	color: var(--textColor);
 	font-size: 1rem;
 	font-weight: 300;
+	color: var(--textColor);
 }
 
 
@@ -126,21 +139,21 @@ p{
 
 
 .header{
-	position: relative;	
-	margin-top: 0; 
-	width: 100%; 
-	min-height: 100vh; 
+	position: relative;
 	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../img/banner.png);
 	background-position: center;
 	background-size: cover;
+	width: 100%;	
+	margin-top: 0;  
+	min-height: 100vh; 
 }
 
 .sub-header{
-	width: 100%; 
-	height: 50vh; 
 	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../img/background.jpg);
 	background-position: center;
 	background-size: cover;
+	width: 100%; 
+	height: 50vh; 
 	text-align: center;
 	color: var(--backgroundTextColor);
 }
@@ -172,8 +185,8 @@ nav{
 }
 
 .nav-links a{
-	color: var(--backgroundTextColor);
 	font-size: 0.9rem;
+	color: var(--backgroundTextColor);
 	text-decoration: none; 
 }
 
@@ -190,15 +203,15 @@ nav .fa{
 	top: 50%;
 	left: 50%;
 	width: 90%; 
-	color: var(--backgroundTextColor);
 	text-align: center;
+	color: var(--backgroundTextColor);
 	transform: translate(-50%,-50%);
 }
 
 .header-text-box p{
 	margin: 10px 0 40px;
-	color: var(--backgroundTextColor);
 	font-size: 1.1rem;
+	color: var(--backgroundTextColor);
 }
 
 
@@ -206,17 +219,18 @@ nav .fa{
 
 
 .cta{
-	margin-top: 15%;
-	padding: 8% 0; 
 	background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../img/banner2.jpg);
 	background-position: center;
 	background-size: cover;
+	margin-top: 15%;
+	padding: 8% 0; 
 	border-radius: 10px;
 }
 
 .cta-title{
 	margin-bottom: 7%; 
 	padding: 0;
+	font-size: 2.2rem;
 	color: var(--backgroundTextColor);
 }
 
@@ -225,8 +239,8 @@ nav .fa{
 
 
 .footer{
-	margin-top: 15%;
 	width: 100%;
+	margin-top: 15%;
 	text-align: center;
 }
 
@@ -244,8 +258,8 @@ nav .fa{
 .hero-btn{
 	display: inline-block;
 	position: relative;
-	padding: 12px 34px;
 	background: transparent;
+	padding: 12px 34px;
 	font-size: 0.9rem;
 	color: var(--backgroundTextColor);
 	border: 1px solid var(--backgroundTextColor);
@@ -261,9 +275,9 @@ nav .fa{
 
 
 .hero-btn--red{
-	border: 1px solid var(--backgroundSmallThingsCollor);
 	background: transparent;
 	color: var(--backgroundSmallThingsCollor);
+	border: 1px solid var(--backgroundSmallThingsCollor);
 }
 
 .hero-btn--red:hover{
@@ -275,10 +289,10 @@ nav .fa{
 
 .nav-links li::after{ 
 	display: block;
-	margin: auto;
-	width: 0%;
-	height: 2px;
 	background: var(--backgroundSmallThingsCollor);
+	width: 0%;
+	margin: auto;
+	height: 2px;
 	content: ''; 
 	transition: 0.5s;
 }
@@ -293,10 +307,10 @@ nav .fa{
 
 .item-line__course-post-it{
 	flex-basis: 31%;
+	background: var(--backgroundColumColor);
 	margin-top: 4%;
 	padding: 20px 12px;
 	box-sizing: border-box; 
-	background: var(--backgroundColumColor);
 	border-radius: 10px;
 	transition: 0.5s;
 }
@@ -375,7 +389,7 @@ nav .fa{
 	padding: 0;
 }
 
-.item-line__standard-photo .item-line__item-title{
+.item-line__standard-photo .item-line__title{
 	margin: 0 auto;
 	text-align: left;
 }
@@ -387,9 +401,9 @@ nav .fa{
 .item-line__evaluation-note{
 	display: flex;
 	flex-basis: 44%;
+	background: var(--backgroundColumColor);
 	margin-top: 4%;
 	padding: 25px;/*joins the scraps in narrow canvases*/
-	background: var(--backgroundColumColor);
 	text-align: left;
 	cursor: pointer;
 	border-radius: 10px;
@@ -410,7 +424,7 @@ nav .fa{
 	padding: 0;
 }
 
-.item-line__evaluation-note .item-line__item-title{
+.item-line__evaluation-note .item-line__title{
 	margin-top: 15px;
 	text-align: left;
 }
@@ -439,6 +453,120 @@ nav .fa{
 	padding: 15px 0 25px;
 }
 
+/*	===== left blog content ==blog */
+
+.left-blog-content{
+	flex-basis: 65%;
+	text-align: left;
+}
+
+.left-blog-content img{
+	width: 100%;
+}
+
+.left-blog-content h2{
+	margin: 30px 0;
+	font-weight: 600;
+}
+
+.left-blog-content p{
+	padding: 0;
+	color: var(--blogContentColor);
+}
+
+/*	===== right blog table ==blog */
+
+.right-blog-table{
+	flex-basis: 32%;
+}
+
+.right-blog-table h3{
+	background:var(--backgroundSmallThingsCollor) ;
+	margin-bottom: 20px;
+	padding: 7px 0;
+	font-size: 16px;
+	color: var(--backgroundTextColor);
+}
+
+.right-blog-table div{
+	display: flex;
+	justify-content: space-between;
+	padding: 8px;
+	align-items: center;
+	color: var(--blogTableContent);
+	box-sizing: border-box;
+}
+
+
+/*	===== form ==blog */
+
+.comment-box{
+	margin: 50px 0;
+	padding:10px 20px;
+	border: 1px solid var(--commentBorder);
+}
+
+.comment-box h3{
+	text-align: left;
+}
+
+.comment-form input, .comment-form textarea{
+	background: var(--backgroundAnnotationForm);
+	width: 100%;
+	margin: 15px 0;
+	padding: 10px;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+}
+
+.comment-form button{
+	margin: 10px 0;
+}
+
+
+/*	===== information bloc ==contact */
+
+.contact-col{
+	flex-basis: 48%;
+	margin-bottom: 30px;
+	text-align: left;
+}
+
+.contact-col__information-block{
+	display: flex;
+	margin-bottom: 40px;
+	align-items: center;
+}
+
+.contact-col__information-block .fa{
+	margin: 10px;
+	margin-right: 30px;
+	font-size: 28px;
+	color: var(--backgroundSmallThingsCollor);
+}
+
+.contact-col__information-block p{
+	padding: 0;
+}
+
+.contact-col__information-block h5{
+	margin-bottom: 5px;
+	font-size: 20px;
+	font-weight: 400;
+	color: var(--blogTableContent);
+}
+
+.contact-col input, .contact-col textarea{
+	width: 100%;
+	margin-bottom: 17px;
+	padding: 15px;
+	outline: none;
+	border: 1px solid var(--commentBorder);
+	box-sizing: border-box;
+}
+
+
 /*	===== icons */	
 
 
@@ -464,15 +592,15 @@ nav .fa{
 @media(max-width: 700px){
 
 	.header-title{
-		font-size: 1.5rem;
 		margin: 0.8rem auto;
+		font-size: 1.5rem;
 	}
 
 	.theme-title{
 		font-size: 1.4rem;
 	}
 
-	.item-line__item-title{
+	.item-line__title{
 		font-size: 1.2rem;
 	}
 
@@ -498,8 +626,8 @@ nav .fa{
 	}
 	
 	.nav-links{
-		position: absolute;
 		background: var(--backgroundSmallThingsCollor);
+		position: fixed;
 		height: 100vh;
 		width: 200px;
 		top: 0;
@@ -512,8 +640,8 @@ nav .fa{
 	nav .fa{
 		display: block; 
 		margin: 10px;
-		color: var(--backgroundTextColor);
 		font-size: 1.5rem;
+		color: var(--backgroundTextColor);
 		cursor: pointer;
 	}
 	
@@ -539,7 +667,7 @@ nav .fa{
 	}
 
 	.cta-title{
-		font-size: 0.9rem;
+		font-size: 0.8rem;
 	}
 	
 	.hero-btn{
@@ -548,7 +676,18 @@ nav .fa{
 	}
 
 	.sub-header-title{
+		font-size: 1.5rem;
 		margin-top: 4rem;
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
